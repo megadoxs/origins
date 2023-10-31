@@ -38,12 +38,17 @@ h1 {
     border-radius: 10px;
 }
 
-header {
+h1 {
     background-color: #6D6F70;
+}
+
+header {
+    background-color: #4D4F50; /*this color must be the same as the nav*/ 
 }
 
 header > nav {
     background-color: #4D4F50;
+    z-index: 1;
 }
 
 header > nav > ul  {
@@ -75,14 +80,44 @@ header > nav > ul > li > button:hover {
     display: flex;
 }
 
+#origins:not(#origins_overview) > div {
+    width: 95%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#origins h2{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right: 10px;
+}
+
+#origins_overview h2 {
+    width: 95%;
+}
+
+#origins > div > div:first-child{
+    display: flex;
+    padding-bottom: 10px;
+}
+
+#origins {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#origins_overview > div {
+    padding-top: 10px;
+    justify-content: center;
+    display: flex;
+}
+
 #main_origins > div{
     width: 95%;
     background-color: #6D6F70;
     border-radius: 10px;
-}
-
-#main_origins > div > h3{
-    padding-left: 10px;
 }
 
 #main_origins {
@@ -133,6 +168,34 @@ header > nav > ul > li > button:hover {
 
 #main_origins > div > div{
     display: flex;
-    justify-content: space-between;
 }
-  
+
+#main_origins > div > div > div:not(#main_origins_video){
+    width: 60%;
+}
+
+#main_origins_video > div{
+    padding-bottom: 15px;
+    align-self: center;
+}
+
+#main_origins_video {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+#main_origins h3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+#main_origins p {
+    padding-left: 10px;
+}
+
+#main_origins_video video {
+    padding-top: 10px;
+    display: block;
+}
