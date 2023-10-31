@@ -69,10 +69,8 @@ header > nav > ul > li > button:hover {
     padding-bottom: 20px;
 }
 
-#drop_down_menu:hover{
-  display: inline-block;
-  opacity: 1;
-  display: block;
+#drop_down_menu:hover #drop_down_menu > div{
+    display: block;
 }
 
 #drop_down_menu > div {
