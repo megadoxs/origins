@@ -69,11 +69,7 @@ header > nav > ul > li > button:hover {
     padding-bottom: 20px;
 }
 
-.drop_down_menu > button{
-    display: none;
-}
-
-#drop_down_menu > button:hover{
+#drop_down_menu:hover{
   display: inline-block;
   opacity: 1;
   display: block;
@@ -87,6 +83,11 @@ header > nav > ul > li > button:hover {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
+
+#drop_down_menu{
+    position: relative;
+    display: inline-block;
+  }
 
 #drop_down_menu > button {
     background-color: #3498db;
