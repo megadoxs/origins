@@ -77,10 +77,8 @@ header > nav > ul > li > button:hover {
 #drop_down_menu > div {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
     z-index: 1;
-    width: 86.672px;
+    min-width: 86.672px;
 }
 
 #drop_down_menu > div > button{
