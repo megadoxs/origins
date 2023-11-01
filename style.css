@@ -170,7 +170,7 @@ header > nav > ul > li > button:hover {
     display: flex;
 }
 
-#main_origins > div > div > div:not(#main_origins_video){
+#main_origins > div > div > div:nth-child(1){
     width: 60%;
 }
 
@@ -198,4 +198,29 @@ header > nav > ul > li > button:hover {
 #main_origins_video video {
     padding-top: 10px;
     display: block;
+}
+
+#origins > div > div:nth-child(2){
+    display: flex;
+}
+
+#origins > div > div:nth-child(2) > div:nth-child(2){
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    width: 40%;
+}
+
+#origins > div > div:nth-child(2) > div:nth-child(1){
+    width: 60%;
+}
+
+#origins img {
+    height: 500px;
+    width: auto;
+    padding-top: 10px;
+}
+
+#origins > div > div:nth-child(2) > div:nth-child(2) > div{
+    align-self: center;
 }
