@@ -39,22 +39,93 @@
         </div>
         <div>
           <div>
-            <div> <!--this is the origin mod description -->
-              <p>Origins is a minecraft mod that gives player the opportunity to have powers depending on the origins that he chooses when he first joins a world.</p>
-              <p>By default there are only nine origins that the player can choose from (see image to the right)</p>
-              <p>Each origins have unique powers that activates under specefticts conditions</p>
-            </div>
-            <div><!--this will be a section about the defaults origins -->
-              <h3>Default Origins</h3>
-            </div>
-            <div><!--this is going to present how you can make your own origins -->
-              <h3>Personalised Origins</h3>
-            </div>
-          </div>
-          <div>
             <div>
-              <p>The default Origins:</p>
-              <img src = "default_origins.png">
+              <div>
+                <p>The default Origins:</p>
+                <img src = "default_origins.png">
+              </div>
+              <div>
+                <div> <!--this is the origin mod description -->
+                  <p>
+                    Origins is a minecraft mods that gives every player the opportunity to choose his origin (similar to a race) and have powers that reflect that origin.<br>
+                    If this was all the Origins mod had it wouldn't have been so great since as you will see, there is only 6 origins by default.<br>
+                    You may or may not understand now that I told you that there is 9 orgins by default, that you can have more.<br>
+                    As I will show you later, this mods not only adds hard codded orgins, but also give the opportunity to make your own.<br>
+                    Using the stadart minecraft datapacks format and the special tools that Origins give you, making custom origins could not be easier.<br> 
+                  </p>
+                </div>
+                <div><!--this will be a section about the defaults origins -->
+                  <h3>Default Origins</h3>
+                  <p>
+                    So, As I mentionned, By default you only have 9 origins.<br>
+                    They are:<br>
+                    <ul>
+                      <li>Enderian</li>
+                      <li>Elytrian</li>
+                      <li>Arachnid</li>
+                      <li>Merling</li>
+                      <li>Blazeborn</li>
+                      <li>Shulk</li>
+                      <li>Phantom</li>
+                      <li>Avian</li>
+                      <li>Feline</li>
+                    </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div><!--this is going to present how you can make your own origins -->
+                <h3>Personalised Origins</h3>
+                <p>
+                  Now here is the part that is really great about this minecraft mod!<br>
+                  *To keep things easily understandable, I won't be presenting all the tools that are avaiable, simply know that there is more.<br> <!--Will be in italic and grey so that you can see its not that important-->
+                  So, Here you are, wanting to create a custom origin to play with your friends.<br>
+                  Well you are going to need to give this origin powers.<br>
+                  Here is the big category that you need to know and what they do.<br>
+                  <ul>
+                    <li>
+                      <h4><a>Power Types</a></h4>
+                      <p>
+                        <a>power types</a> are in a way a countainer that you can only be access if the general condition for the power type happend.<br>
+                        Might be confusing so here is an example:<br>
+                        You want to do something every 10 seconds, the best way to do so would be to use a <a>action over time</a> that does wathever is inside this "power type" every specified amount of time.<br>
+                        This power type would then execute <a>Actions</a> that you have put in it if the <a>Conditions</a> that you gave the "power type" to execute are true.<br>
+                      </p>
+                    </li>
+                    <li>
+                      <h4><a>Actions</a></h4>
+                      <p>
+                        <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.<br>
+                        e.g. you want to brun the player every 10seconds.<br>
+                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.<br>
+                      </p>
+                    </li>
+                    <li>
+                      <h4><a>Conditions</a></h4>
+                      <p>
+                        <a>Conditions</a> are well conditions that you want to be true before the <a>power types</a> executes, which they are also part of.<br>
+                        e.g. you want to brun the player every 10seconds if the player is exposed to sun.<br>
+                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a> and an <a>exposed to sun</a> <a>entity condition</a>.<br>
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </div>
+              <div>
+                <div>
+                  <p>example of an empty action over time power that does nothing every 10 seconds</p>
+                  <img>
+                </div>
+                <div>
+                  <p>exemple of an action over time power that burns the player every 10 seconds</p>
+                  <img>
+                </div>
+                <div>
+                  <p>exemple of an action over time power that burns the player if the player is exposed to the sun every 10 seconds</p>
+                  <img>
+                </div>
+              </div>
             </div>
           </div>
         </div>

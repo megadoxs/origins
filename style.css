@@ -216,8 +216,8 @@ header > nav > ul > li > button:hover {
 }
 
 #origins img {
-    height: 500px;
-    width: auto;
+    height: auto;
+    width: 80%;
     padding-top: 10px;
 }
 
