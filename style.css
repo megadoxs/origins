@@ -195,32 +195,86 @@ header > nav > ul > li > button:hover {
     padding-left: 10px;
 }
 
-#main_origins_video video {
-    padding-top: 10px;
-    display: block;
-}
+/* comment exemple*/
 
-#origins > div > div:nth-child(2){
+#default_origins {
     display: flex;
 }
 
-#origins > div > div:nth-child(2) > div:nth-child(2){
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-    width: 40%;
+#default_origins > div:nth-child(1){
+    width: 90%;
 }
 
-#origins > div > div:nth-child(2) > div:nth-child(1){
-    width: 60%;
+#default_origins ul {
+    column-count: 3;
+    padding-left: 20px;
+    width: 63%;
 }
 
-#origins img {
-    height: auto;
+#default_origins img{
     width: 80%;
-    padding-top: 10px;
+    height: auto;
 }
 
-#origins > div > div:nth-child(2) > div:nth-child(2) > div{
-    align-self: center;
+#origins > div:nth-child(1) {
+    display: flex;
+}
+
+#default_origins > div:nth-child(1) > div:nth-child(1) {
+    text-align: justify;
+    text-justify: inter-word;
+    width: 80%;
+}
+
+#default_origins > div:nth-child(1) > div:nth-child(2) > p{
+   padding-bottom: 5px;
+   width: 80%;
+}
+
+#default_origins h3 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.indent {
+    padding-left: 10px;
+}
+
+#code_box {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+}
+
+#code_box > div{
+    margin: 10px;
+}
+
+#custom_origins > div {
+    display: flex;
+}
+
+.download_code {
+    display: flex;
+    justify-content: right;
+    padding-right: 10px;
+}
+
+.download_code  button{
+    padding: 5px;
+    font-weight: bold;
+    display: flex;
+}
+
+.download_code a {
+    text-decoration: none;
+}
+
+.download_code  img{
+    height: 15px;
+    width: auto;
+    padding-right: 5px;
+    display:block;
 }
