@@ -1,0 +1,8 @@
+{
+    "type":"origins:action_over_time",
+    "entity_action":{
+        "type": "origins:set_on_fire",
+        "duration": 5
+    },
+    "interval": 200
+}

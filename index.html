@@ -26,9 +26,12 @@
       </nav>
     </header>
     <main id = "index_main">
+      <div id = "datapacks">
+        <h2>Minecraft Datapacks</h2>
+      </div>
       <div id = "origins">
         <div>
-          <h2>Origins</h2>
+          <h2>Origins Mod</h2>
           <div id = "index_main_link_images">
             <a href = "https://github.com/apace100/origins-fabric"><img src = "github.png"></a>
             <a href = "https://www.curseforge.com/minecraft/mc-mods/origins"><img src = "curseforge.png"></a>
@@ -85,7 +88,7 @@
               <!--this is going to present how you can make your own origins -->
                 <div>
                   <div>
-                    <h4><a>Power Types</a></h4>
+                    <h4><a href = "https://origins.readthedocs.io/en/latest/types/power_types/">Power Types</a></h4>
                     <p>
                       <a>power types</a> are in a way a countainer that you can only be access if the general condition for the power type happend.<br>
                       Might be confusing so here is an example:<br>
@@ -99,10 +102,8 @@
                       <div>
                         <p>
                           {<br>
-                            <p>
-                            &nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                            &nbsp;&nbsp;"interval": 20<br>
-                            </p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
                           }
                           <span class = "download_code">
                             <a href = "downloads/examples/empty_action_over_time.json" download><button><img src = "download_arrow.png">Download</button></a>
@@ -113,36 +114,38 @@
                   </div>
                 </div>
                 <div>
-                  <div>
-                    <h4><a>Actions</a></h4>
-                    <p>
-                      <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.<br>
-                      e.g. you want to brun the player every 10seconds.<br>
-                      you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.<br>
-                    </p>
-                  </div>
                   <div>
                     <p>exemple of an action over time power that burns the player every 10 seconds</p>
                     <div id = code_box>
                       <div>
                         <p>
                           {<br>
-                            <p>
-                            &nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                            &nbsp;&nbsp;"interval": 20<br>
-                            </p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
                           }
                           <span class = "download_code">
-                            <a href = "downloads/examples/empty_action_over_time.json" download><button><img src = "download_arrow.png">Download</button></a>
+                            <a href = "downloads/examples/burn.json" download><button><img src = "download_arrow.png">Download</button></a>
                           </span>
                         </p>
                       </div>
                     </div>
                   </div>
+                  <div>
+                    <h4><a href = "https://origins.readthedocs.io/en/latest/types/action_types/">Actions</a></h4>
+                    <p>
+                      <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.<br>
+                      e.g. you want to brun the player every 10seconds.<br>
+                      you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.<br>
+                    </p>
+                  </div>
                 </div>
                 <div>
                   <div>
-                    <h4><a>Conditions</a></h4>
+                    <h4><a href = "https://origins.readthedocs.io/en/latest/types/condition_types/">Conditions</a></h4>
                     <p>
                       <a>Conditions</a> are well conditions that you want to be true before the <a>power types</a> executes, which they are also part of.<br>
                       e.g. you want to brun the player every 10seconds if the player is exposed to sun.<br>
@@ -155,13 +158,18 @@
                       <div>
                         <p>
                           {<br>
-                            <p>
-                            &nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                            &nbsp;&nbsp;"interval": 20<br>
-                            </p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
                           }
                           <span class = "download_code">
-                            <a href = "downloads/examples/empty_action_over_time.json" download><button><img src = "download_arrow.png">Download</button></a>
+                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
                           </span>
                         </p>
                       </div>
@@ -169,10 +177,11 @@
                   </div>
                 </div>
             </div>
+          </div>
       </div>
       <div id = "origins_overview">
         <div>
-          <h2>Short overview of my datapacks</h2>
+          <h2>My Origins datapacks</h2>
         </div>
         <div id = "main_origins">
           <div>

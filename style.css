@@ -278,3 +278,8 @@ header > nav > ul > li > button:hover {
     padding-right: 5px;
     display:block;
 }
+
+h4 a {
+    text-decoration: none;
+    color: black;
+}
