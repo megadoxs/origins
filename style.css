@@ -11,15 +11,20 @@ h1 {
     padding-top: 20px;
     padding-bottom: 10px;
     text-align: center;
+    background-color: #6D6F70;
 }
 
 #index_header {
     height: 122px;
 }
 
-#index_main_link_images > a > img {
+#index_main > div > div:nth-of-type(1) > div > a > img {
     width: 40px;
     height: auto;
+}
+
+#index_main > div > div:nth-of-type(1) {
+    display: flex;
 }
 
 #index_main {
@@ -40,10 +45,6 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-h1 {
-    background-color: #6D6F70;
 }
 
 header {
@@ -105,10 +106,6 @@ header > nav > ul > li > button:hover {
     margin-top: auto;
     margin-bottom: auto;
     padding-right: 10px;
-}
-
-#origins_overview h2 {
-    width: 95%;
 }
 
 #main_origins > div{
@@ -289,4 +286,18 @@ header > nav > ul > li > button:hover {
 h4 a {
     text-decoration: none;
     color: black;
+}
+
+#origins_datapacks > div:nth-child(2) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #6D6F70;
+    border-radius: 10px;
+}
+
+#origins_datapacks > div:nth-child(2) > div {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
 }
