@@ -36,6 +36,10 @@ h1 {
     background-color: #4D4F50;
     width: 98%;
     border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -80,13 +84,24 @@ header > nav > ul > li > button:hover {
     display: flex;
 }
 
-#origins:not(#origins_overview) > div {
+#index_main > div > div:nth-child(1) {
     width: 95%;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-#origins h2{
+#index_main > div > div:nth-child(2) {
+    width: 95%;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#custom_origins {
+    flex-direction: column;
+}
+
+#index_main h2{
     margin-top: auto;
     margin-bottom: auto;
     padding-right: 10px;
@@ -94,24 +109,6 @@ header > nav > ul > li > button:hover {
 
 #origins_overview h2 {
     width: 95%;
-}
-
-#origins > div > div:first-child{
-    display: flex;
-    padding-bottom: 10px;
-}
-
-#origins {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#origins_overview > div {
-    padding-top: 10px;
-    justify-content: center;
-    display: flex;
 }
 
 #main_origins > div{
@@ -127,21 +124,22 @@ header > nav > ul > li > button:hover {
     gap: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
+    width: 100%;
 }
 
-#drop_down_menu:hover > div{
+.drop_down_menu:hover > div{
     display: flex;
     flex-direction: column;
 }
 
-#drop_down_menu > div {
+.drop_down_menu > div {
     display: none;
     position: absolute;
     z-index: 1;
-    min-width: 86.672px;
+    width: 100%;
 }
 
-#drop_down_menu > div > button{
+.drop_down_menu > div > button{
     padding-top: 5px;
     padding-bottom: 5px;
     border-style: none;
@@ -151,11 +149,11 @@ header > nav > ul > li > button:hover {
     font-weight: bold;
 }
 
-#drop_down_menu > div > button:hover{
+.drop_down_menu > div > button:hover{
     background-color: #474949;
 }
 
-#drop_down_menu{
+.drop_down_menu{
     position: relative;
     display: inline-block;
 }
@@ -198,22 +196,31 @@ header > nav > ul > li > button:hover {
 /* comment exemple*/
 
 #default_origins {
-    display: flex;
+    align-items: center;
 }
 
 #default_origins > div:nth-child(1){
-    width: 90%;
+    width: 60%;
+}
+
+#default_origins > div:nth-child(2){
+    width: 40%;
+    display: flex;
+    height: 100%;
+}
+
+#default_origins img{
+    width: auto;
+    height: 100%;
+    display: block;
+    max-height: 361px;
+    max-width: 100%;
 }
 
 #default_origins ul {
     column-count: 3;
     padding-left: 20px;
     width: 63%;
-}
-
-#default_origins img{
-    width: 80%;
-    height: auto;
 }
 
 #origins > div:nth-child(1) {
@@ -223,7 +230,7 @@ header > nav > ul > li > button:hover {
 #default_origins > div:nth-child(1) > div:nth-child(1) {
     text-align: justify;
     text-justify: inter-word;
-    width: 80%;
+    width: 90%;
 }
 
 #default_origins > div:nth-child(1) > div:nth-child(2) > p{

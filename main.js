@@ -1,6 +1,5 @@
 window.onscroll = function() {Stickynav()};
 
-var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;  
 
 function Stickynav() {
@@ -10,4 +9,16 @@ function Stickynav() {
     } else {
         navbar.classList.remove("sticky");
     }
+}
+
+function scrollToTarget(targetId) {
+
+    var targetDiv = document.getElementById(targetId);
+    var navbarHeight = navbar.offsetHeight;
+    var targetScrollPosition = targetDiv.offsetTop - navbarHeight;
+
+    window.scrollTo({
+      top: targetScrollPosition,
+      behavior: 'smooth'
+    });
 }

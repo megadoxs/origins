@@ -11,8 +11,16 @@
       <h1>Megadoxs's Origins</h1>
       <nav id = "navbar">
         <ul>
-          <li><button onclick="location.href = './index.html'">Home</button></li>
-          <li id = "drop_down_menu">
+          <li class = "drop_down_menu">
+            <button onclick="location.href = './index.html'">Home</button>
+            <div>
+              <button onclick="scrollToTarget('origins')">Origins Mod</button>
+              <button onclick="scrollToTarget('minecraft_datapacks')">Minecraft Datapacks</button>
+              <button onclick="scrollToTarget('origins_datapacks')">Origins Datapacks</button>
+              <button onclick="scrollToTarget('origins_overview')">My Origins Datapacks</button>
+            </div>
+          </li>
+          <li class = "drop_down_menu">
             <button>Origins</button>
             <div>
               <button onclick="location.href = './rimuru.html'">Rimuru</button>
@@ -26,9 +34,6 @@
       </nav>
     </header>
     <main id = "index_main">
-      <div id = "datapacks">
-        <h2>Minecraft Datapacks</h2>
-      </div>
       <div id = "origins">
         <div>
           <h2>Origins Mod</h2>
@@ -39,7 +44,6 @@
             <a href = "https://discord.gg/GTfTswZcFT"><img src = "discord.png"></a>
           </div>
         </div>
-        <div>
             <div id = "default_origins">
               <div>
                 <div> <!--this is the origin mod description -->
@@ -80,104 +84,112 @@
                 </div>
               </div>
               <div>
-                <p>The default Origins:</p>
                 <img src = "default_origins.png">
               </div>
             </div>
-            <div id = "custom_origins">
-              <!--this is going to present how you can make your own origins -->
+      </div>
+      <div id = "minecraft_datapacks">
+        <div>
+          <h2>Minecraft datapacks</h2>
+        </div>
+          <div id = "custom_origins">
+            <!--this is going to present how you can make your own origins -->
+              <div>
                 <div>
-                  <div>
-                    <h4><a href = "https://origins.readthedocs.io/en/latest/types/power_types/">Power Types</a></h4>
-                    <p>
-                      <a>power types</a> are in a way a countainer that you can only be access if the general condition for the power type happend.<br>
-                      Might be confusing so here is an example:<br>
-                      You want to do something every 10 seconds, the best way to do so would be to use a <a>action over time</a> that does wathever is inside this "power type" every specified amount of time.<br>
-                      This power type would then execute <a>Actions</a> that you have put in it if the <a>Conditions</a> that you gave the "power type" to execute are true.<br>
-                    </p>
+                  <h4><a href = "https://origins.readthedocs.io/en/latest/types/power_types/">Power Types</a></h4>
+                  <p>
+                    <a>power types</a> are in a way a countainer that you can only be access if the general condition for the power type happend.<br>
+                    Might be confusing so here is an example:<br>
+                    You want to do something every 10 seconds, the best way to do so would be to use a <a>action over time</a> that does wathever is inside this "power type" every specified amount of time.<br>
+                    This power type would then execute <a>Actions</a> that you have put in it if the <a>Conditions</a> that you gave the "power type" to execute are true.<br>
+                  </p>
+                </div>
+                <div>
+                  <p>example of an empty action over time power that does nothing every 10 seconds</p>
+                  <div id = code_box>
+                    <div>
+                      <p>
+                        {<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                        }
+                        <span class = "download_code">
+                          <a href = "downloads/examples/empty_action_over_time.json" download><button><img src = "download_arrow.png">Download</button></a>
+                        </span>
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p>example of an empty action over time power that does nothing every 10 seconds</p>
-                    <div id = code_box>
-                      <div>
-                        <p>
-                          {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                          }
-                          <span class = "download_code">
-                            <a href = "downloads/examples/empty_action_over_time.json" download><button><img src = "download_arrow.png">Download</button></a>
-                          </span>
-                        </p>
-                      </div>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <p>exemple of an action over time power that burns the player every 10 seconds</p>
+                  <div id = code_box>
+                    <div>
+                      <p>
+                        {<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                        }
+                        <span class = "download_code">
+                          <a href = "downloads/examples/burn.json" download><button><img src = "download_arrow.png">Download</button></a>
+                        </span>
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div>
-                    <p>exemple of an action over time power that burns the player every 10 seconds</p>
-                    <div id = code_box>
-                      <div>
-                        <p>
-                          {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                          }
-                          <span class = "download_code">
-                            <a href = "downloads/examples/burn.json" download><button><img src = "download_arrow.png">Download</button></a>
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h4><a href = "https://origins.readthedocs.io/en/latest/types/action_types/">Actions</a></h4>
-                    <p>
-                      <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.<br>
-                      e.g. you want to brun the player every 10seconds.<br>
-                      you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.<br>
-                    </p>
-                  </div>
+                  <h4><a href = "https://origins.readthedocs.io/en/latest/types/action_types/">Actions</a></h4>
+                  <p>
+                    <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.<br>
+                    e.g. you want to brun the player every 10seconds.<br>
+                    you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.<br>
+                  </p>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <h4><a href = "https://origins.readthedocs.io/en/latest/types/condition_types/">Conditions</a></h4>
+                  <p>
+                    <a>Conditions</a> are well conditions that you want to be true before the <a>power types</a> executes, which they are also part of.<br>
+                    e.g. you want to brun the player every 10seconds if the player is exposed to sun.<br>
+                    you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a> and an <a>exposed to sun</a> <a>entity condition</a>.<br>
+                  </p>
                 </div>
                 <div>
-                  <div>
-                    <h4><a href = "https://origins.readthedocs.io/en/latest/types/condition_types/">Conditions</a></h4>
-                    <p>
-                      <a>Conditions</a> are well conditions that you want to be true before the <a>power types</a> executes, which they are also part of.<br>
-                      e.g. you want to brun the player every 10seconds if the player is exposed to sun.<br>
-                      you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a> and an <a>exposed to sun</a> <a>entity condition</a>.<br>
-                    </p>
-                  </div>
-                  <div>
-                    <p>exemple of an action over time power that burns the player if the player is exposed to the sun every 10 seconds</p>
-                    <div id = code_box>
-                      <div>
-                        <p>
-                          {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                          }
-                          <span class = "download_code">
-                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
-                          </span>
-                        </p>
-                      </div>
+                  <p>exemple of an action over time power that burns the player if the player is exposed to the sun every 10 seconds</p>
+                  <div id = code_box>
+                    <div>
+                      <p>
+                        {<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                        }
+                        <span class = "download_code">
+                          <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
+                        </span>
+                      </p>
                     </div>
                   </div>
                 </div>
-            </div>
+              </div>
           </div>
+      </div>
+      <div id = "origins_datapacks">
+        <div>
+          <h2>Origins datapacks</h2>
+        </div>
       </div>
       <div id = "origins_overview">
         <div>
