@@ -96,7 +96,9 @@ header > nav > ul > li > button:hover {
 }
 
 #custom_origins {
+    display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 #index_main h2{
@@ -183,13 +185,14 @@ h3 {
 }
 
 #default_origins > div:nth-child(1){
-    width: 60%;
+    width: 55%;
 }
 
 #default_origins > div:nth-child(2){
-    width: 40%;
     display: flex;
     height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #default_origins img{
@@ -202,13 +205,10 @@ h3 {
 
 #default_origins ul {
     column-count: 3;
-    padding-left: 20px;
     width: 63%;
 }
 
-#default_origins > div:nth-child(1) > div:nth-child(1) {
-    text-align: justify;
-    text-justify: inter-word;
+#default_origins .justify_text {
     width: 90%;
 }
 
@@ -218,7 +218,11 @@ h3 {
 }
 
 .indent {
-    padding-left: 10px;
+    padding-left: 20px;
+}
+
+.code_description {
+    width: 50%;
 }
 
 .code_box {
@@ -232,12 +236,28 @@ h3 {
 .code_box > div{
     margin: 10px;
     display: flex;
+    min-width: 400px;
+    max-width: 600px;
+    height: 200px;
+    width: 40vw;
     flex-direction: column;
+}
+
+.code_box > div > div:nth-child(1) {
+    overflow-y: auto;
+    overflow-x: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.justify_text {
+    text-align: justify;
 }
 
 #custom_origins > div {
     display: flex;
     justify-content: space-between;
+    gap:40px
 }
 
 .download_code {
@@ -268,6 +288,14 @@ h4 a {
     color: black;
 }
 
+#custom_origins h4 {
+    padding-bottom: 10px;
+}
+
+#origins_datapacks h3 {
+    padding-bottom: 20px;
+}
+
 #origins_datapacks > div:not(:nth-child(1)), 
 #origins_overview > div:not(:nth-child(1)) {
     gap: 20px;
@@ -284,4 +312,20 @@ h4 a {
     width: 95%;
     display: flex;
     flex-direction: column;
+}
+
+#power_description ul {
+    column-count: 2;
+}
+
+#power_description {
+    display: flex;
+}
+
+#power_description >div:nth-child(1) {
+    width: 40%;
+}
+
+#power_description> div:nth-child(2) {
+    width: 60%;
 }

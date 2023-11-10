@@ -47,12 +47,11 @@
             <div id = "default_origins">
               <div>
                 <div> <!--this is the origin mod description -->
-                  <p>
+                  <p class = "justify_text">
                     Origins is a minecraft mods that gives every player the opportunity to choose his origin (similar to a race) and have powers that reflect that origin.
                     If this was all the Origins mod had it wouldn't have been so great since as you will see, there is only 6 origins by default.
                     You may or may not understand now that I told you that there is 9 orgins by default, that you can have more.
                     As I will show you later, this mods not only adds hard codded orgins, but also give the opportunity to make your own.
-                    Using the stadart minecraft datapacks format and the special tools that Origins give you, making custom origins could not be easier.
                   </p>
                 </div>
                 <div><!--this will be a section about the defaults origins -->
@@ -60,7 +59,7 @@
                   <p>
                     If you use the origin mod by default, you only have access to the nine following origins:<!--don't like this sentance -->
                   </p>
-                  <ul>
+                  <ul class = "indent">
                     <li>Enderian</li>
                     <li>Elytrian</li>
                     <li>Arachnid</li>
@@ -74,12 +73,10 @@
                 </div>
                 <div>
                   <h3>Personalised Origins</h3>
-                  <p>
-                    Now here is the part that is really great about this minecraft mod!<br>
-                    *To keep things easily understandable, I won't be presenting all the tools that are avaiable, simply know that there is more.<br> <!--Will be in italic and grey so that you can see its not that important-->
-                    So, Here you are, wanting to create a custom origin to play with your friends.<br>
-                    Well you are going to need to give this origin powers.<br>
-                    Here is the big category that you need to know and what they do.<br>
+                  <p class = "justify_text">
+                    Personalised Origins or custom Origins are origins that are not by default in the mod and can be added using a modified version of minecraft vanilla datapack format.
+                    Once the origins have been added in the datapack folder, they can be selected the same way you would select any of the default one.
+                    A bunch of origins made by third parties and help to make them can be found on Origins discord server.
                   </p>
                 </div>
               </div>
@@ -110,28 +107,56 @@
               <div>
                 <h3>Powers</h3>
               </div>
+              <div id = "power_description">
+                <div>
+                  <p class = "justify_text">
+                    Powers are used to give functionality to origins, they are json file that goes inside the power folder of your origin datapack.
+                  </p>
+                  <p>
+                    Generaly they can have up to 8 arguments from this list:
+                  </p>
+                  <ul class = "indent">
+                    <li>Type</li>
+                    <li>Actions</li>
+                    <li>Condition</li>
+                    <li>Name</li>
+                    <li>Description</li>
+                    <li>Hidden</li>
+                    <li>Badge</li>
+                    <li>Loading Priority</li>
+                  </ul>
+                  <p>
+                    *Some power don't accept action or only specificts type of action, same goes for condition
+                  </p>
+                </div>
+                <div>
+                  <img src = "">
+                </div>
+              </div>
               <div id = "custom_origins">
                 <!--this is going to present how you can make your own origins -->
                   <div>
-                    <div>
+                    <div class = "code_description">
                       <h4><a href = "https://origins.readthedocs.io/en/latest/types/power_types/">Power Types</a></h4>
-                      <p>
-                        <a>power types</a> are in a way a countainer that you can only be access if the general condition for the power type happend.<br>
-                        Might be confusing so here is an example:<br>
-                        You want to do something every 10 seconds, the best way to do so would be to use a <a>action over time</a> that does wathever is inside this "power type" every specified amount of time.<br>
-                        This power type would then execute <a>Actions</a> that you have put in it if the <a>Conditions</a> that you gave the "power type" to execute are true.<br>
+                      <p class = "justify_text">
+                        <a>power types</a> are in a way a countainer that you can only be access if the general condition for the power type happend.
+                        Might be confusing so here is an example:
+                        You want to do something every 10 seconds, the best way to do so would be to use a <a>action over time</a> that does wathever is inside this "power type" every specified amount of time.
+                        This power type would then execute <a>Actions</a> that you have put in it if the <a>Conditions</a> that you gave the "power type" to execute are true.
                       </p>
                     </div>
                     <div>
                       <p>Lorem ipsum dolor sit amet.</p>
                       <div class = code_box>
                         <div>
-                          <p>
-                            {<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                            }
-                          </p>
+                          <div>
+                            <p>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                              }
+                            </p>
+                          </div>
                           <div class = "download_code">
                             <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
                           </div>
@@ -144,57 +169,61 @@
                       <p>Lorem ipsum dolor sit amet.</p>
                       <div class = code_box>
                         <div>
-                          <p>
-                            {<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                            }
-                          </p>
+                          <div>
+                            <p>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                              }
+                            </p>
+                          </div>
                           <div class = "download_code">
                             <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div>
+                    <div class = "code_description">
                       <h4><a href = "https://origins.readthedocs.io/en/latest/types/action_types/">Actions</a></h4>
-                      <p>
-                        <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.<br>
-                        e.g. you want to brun the player every 10seconds.<br>
-                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.<br>
+                      <p class = "justify_text">
+                        <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.
+                        e.g. you want to brun the player every 10seconds.
+                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.
                       </p>
                     </div>
                   </div>
                   <div>
-                    <div>
+                    <div class = "code_description">
                       <h4><a href = "https://origins.readthedocs.io/en/latest/types/condition_types/">Conditions</a></h4>
-                      <p>
-                        <a>Conditions</a> are well conditions that you want to be true before the <a>power types</a> executes, which they are also part of.<br>
-                        e.g. you want to brun the player every 10seconds if the player is exposed to sun.<br>
-                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a> and an <a>exposed to sun</a> <a>entity condition</a>.<br>
+                      <p class = "justify_text">
+                        <a>Conditions</a> are well conditions that you want to be true before the <a>power types</a> executes, which they are also part of.
+                        e.g. you want to brun the player every 10seconds if the player is exposed to sun.
+                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a> and an <a>exposed to sun</a> <a>entity condition</a>.
                       </p>
                     </div>
                     <div>
                       <p>Lorem ipsum dolor sit amet.</p>
                       <div class = code_box>
                         <div>
-                          <p>
-                            {<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                            }
-                          </p>
+                          <div>
+                            <p>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                              }
+                            </p>
+                          </div>
                           <div class = "download_code">
                             <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
                           </div>
