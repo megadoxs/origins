@@ -23,10 +23,6 @@ h1 {
     height: auto;
 }
 
-#index_main > div > div:nth-of-type(1) {
-    display: flex;
-}
-
 #index_main {
     background-color: #414243;
     align-items: center;
@@ -45,6 +41,8 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap:20px;
+    padding-bottom: 30px;
 }
 
 header {
@@ -87,15 +85,14 @@ header > nav > ul > li > button:hover {
 
 #index_main > div > div:nth-child(1) {
     width: 95%;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
+    display: flex;
 }
 
-#index_main > div > div:nth-child(2) {
+#index_main > div > div:not(:nth-child(1)) {
     width: 95%;
     display: flex;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 #custom_origins {
@@ -106,22 +103,6 @@ header > nav > ul > li > button:hover {
     margin-top: auto;
     margin-bottom: auto;
     padding-right: 10px;
-}
-
-#main_origins > div{
-    width: 95%;
-    background-color: #6D6F70;
-    border-radius: 10px;
-}
-
-#main_origins {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 100%;
 }
 
 .drop_down_menu:hover > div{
@@ -161,16 +142,20 @@ header > nav > ul > li > button:hover {
     width: 100%;
 }
 
-#main_origins > div > div{
+#origins_overview h3 a{
+    text-decoration: none;
+    color: black;
+} 
+
+#origins_overview > div:not(:nth-child(1)) > div > div{
     display: flex;
 }
 
-#main_origins > div > div > div:nth-child(1){
+#origins_overview > div:not(:nth-child(1)) > div > div > div:nth-child(1){
     width: 60%;
 }
 
 #main_origins_video > div{
-    padding-bottom: 15px;
     align-self: center;
 }
 
@@ -180,14 +165,15 @@ header > nav > ul > li > button:hover {
     width: 40%;
 }
 
-#main_origins h3 {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
+#main_origins_video video {
+    width: 320px;
+    height: 240px;
+    display: block;
 }
 
-#main_origins p {
-    padding-left: 10px;
+h3 {
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 /* comment exemple*/
@@ -220,10 +206,6 @@ header > nav > ul > li > button:hover {
     width: 63%;
 }
 
-#origins > div:nth-child(1) {
-    display: flex;
-}
-
 #default_origins > div:nth-child(1) > div:nth-child(1) {
     text-align: justify;
     text-justify: inter-word;
@@ -235,16 +217,11 @@ header > nav > ul > li > button:hover {
    width: 80%;
 }
 
-#default_origins h3 {
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-
 .indent {
     padding-left: 10px;
 }
 
-#code_box {
+.code_box {
     background-color: white;
     padding: 10px;
     border-radius: 10px;
@@ -252,18 +229,21 @@ header > nav > ul > li > button:hover {
     border-color: black;
 }
 
-#code_box > div{
+.code_box > div{
     margin: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 #custom_origins > div {
     display: flex;
+    justify-content: space-between;
 }
 
 .download_code {
     display: flex;
     justify-content: right;
-    padding-right: 10px;
+    padding-top: 10px;
 }
 
 .download_code  button{
@@ -288,15 +268,19 @@ h4 a {
     color: black;
 }
 
-#origins_datapacks > div:nth-child(2) {
+#origins_datapacks > div:not(:nth-child(1)), 
+#origins_overview > div:not(:nth-child(1)) {
+    gap: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #6D6F70;
     border-radius: 10px;
+    padding-bottom: 15px;
 }
 
-#origins_datapacks > div:nth-child(2) > div {
+#origins_datapacks > div:not(:nth-child(1)) > div,
+#origins_overview > div:not(:nth-child(1)) > div {
     width: 95%;
     display: flex;
     flex-direction: column;
