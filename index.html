@@ -125,17 +125,47 @@
                     <li>Badge</li>
                     <li>Loading Priority</li>
                   </ul>
+                  <p class = "warning_text">
+                    *Some power type don't accept action or only specificts type of action, same goes for condition.
+                  </p>
                   <p>
-                    *Some power don't accept action or only specificts type of action, same goes for condition
+                    To make all this more clear, Next to this text is a full example of the coded of a power that would make you burn if you are exposed to the sun.
+                    Then, underneath, you can see each part of the code individually.
                   </p>
                 </div>
                 <div>
-                  <img src = "">
+                  <p>Lorem ipsum dolor sit amet.</p>
+                  <div class = code_box>
+                    <div>
+                      <div>
+                        <p>
+                          {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"name":"Sun Burn",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"description":"burns you when you stand under the sun",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"hidden": false <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                          }
+                        </p>
+                      </div>
+                      <div class = "download_code">
+                        <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div id = "custom_origins">
                 <!--this is going to present how you can make your own origins -->
-                  <div>
+                  <div class>
                     <div class = "code_description">
                       <h4><a href = "https://origins.readthedocs.io/en/latest/types/power_types/">Power Types</a></h4>
                       <p class = "justify_text">
@@ -145,27 +175,9 @@
                         This power type would then execute <a>Actions</a> that you have put in it if the <a>Conditions</a> that you gave the "power type" to execute are true.
                       </p>
                     </div>
-                    <div>
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <div class = code_box>
-                        <div>
-                          <div>
-                            <p>
-                              {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                              }
-                            </p>
-                          </div>
-                          <div class = "download_code">
-                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                   <div>
-                    <div>
+                    <div class = "code">
                       <p>Lorem ipsum dolor sit amet.</p>
                       <div class = code_box>
                         <div>
@@ -205,7 +217,7 @@
                         you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a> and an <a>exposed to sun</a> <a>entity condition</a>.
                       </p>
                     </div>
-                    <div>
+                    <div class = "code"> 
                       <p>Lorem ipsum dolor sit amet.</p>
                       <div class = code_box>
                         <div>
@@ -219,6 +231,197 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;},<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                              }
+                            </p>
+                          </div>
+                          <div class = "download_code">
+                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class = "code">
+                      <p>Lorem ipsum dolor sit amet.</p>
+                      <div class = code_box>
+                        <div>
+                          <div>
+                            <p>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                              }
+                            </p>
+                          </div>
+                          <div class = "download_code">
+                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class = "code_description">
+                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/action_types/">Name</a></h4>
+                      <p class = "justify_text">
+                        <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.
+                        e.g. you want to brun the player every 10seconds.
+                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class = "code_description">
+                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/condition_types/">Description</a></h4>
+                      <p class = "justify_text">
+                        <a>Conditions</a> are well conditions that you want to be true before the <a>power types</a> executes, which they are also part of.
+                        e.g. you want to brun the player every 10seconds if the player is exposed to sun.
+                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a> and an <a>exposed to sun</a> <a>entity condition</a>.
+                      </p>
+                    </div>
+                    <div class = "code">
+                      <p>Lorem ipsum dolor sit amet.</p>
+                      <div class = code_box>
+                        <div>
+                          <div>
+                            <p>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                              }
+                            </p>
+                          </div>
+                          <div class = "download_code">
+                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class = "code">
+                      <p>Lorem ipsum dolor sit amet.</p>
+                      <div class = code_box>
+                        <div>
+                          <div>
+                            <p>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                              }
+                            </p>
+                          </div>
+                          <div class = "download_code">
+                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class = "code_description">
+                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/action_types/">Hidden</a></h4>
+                      <p class = "justify_text">
+                        <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.
+                        e.g. you want to brun the player every 10seconds.
+                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class = "code_description">
+                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/condition_types/">Badge</a></h4>
+                      <p class = "justify_text">
+                        <a>Conditions</a> are well conditions that you want to be true before the <a>power types</a> executes, which they are also part of.
+                        e.g. you want to brun the player every 10seconds if the player is exposed to sun.
+                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a> and an <a>exposed to sun</a> <a>entity condition</a>.
+                      </p>
+                    </div>
+                    <div class = "code">
+                      <p>Lorem ipsum dolor sit amet.</p>
+                      <div class = code_box>
+                        <div>
+                          <div>
+                            <p>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                              }
+                            </p>
+                          </div>
+                          <div class = "download_code">
+                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class = "code">
+                      <p>Lorem ipsum dolor sit amet.</p>
+                      <div class = code_box>
+                        <div>
+                          <div>
+                            <p>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
+                              }
+                            </p>
+                          </div>
+                          <div class = "download_code">
+                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "download_arrow.png">Download</button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class = "code_description">
+                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/action_types/">Loading Priority</a></h4>
+                      <p class = "justify_text">
+                        <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.
+                        e.g. you want to brun the player every 10seconds.
+                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class = "code_description"></div>
+                    <div class = "code">
+                      <p>Lorem ipsum dolor sit amet.</p>
+                      <div class = code_box>
+                        <div>
+                          <div>
+                            <p>
+                              {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;},<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
                               }
