@@ -14,6 +14,14 @@ h1 {
     background-color: #6D6F70;
 }
 
+video {
+    display: block;
+}
+
+img {
+    display: block;
+}
+
 #index_header {
     height: 122px;
 }
@@ -52,16 +60,39 @@ header {
 header > nav {
     background-color: #4D4F50;
     z-index: 1;
+    display: flex;
 }
 
-header > nav > ul  {
+header > nav img {
+    height: 40px;
+    width: auto;
+    padding: 7.5px;
+}
+
+header > nav > div:nth-child(2) > button {
+    background-color: #4D4F50;
+    border: 0;
+    cursor: pointer;
+}
+
+header > nav > div:nth-child(2) {
+    width: 55px;
+    padding-right: 10px;
+}
+
+header > nav > div:nth-child(1) {
+    flex-grow: 10;
+    padding-left: 65px;
+}
+
+header > nav > div:nth-child(1) > ul  {
     display: flex;
     justify-content: center;
     list-style-type: none;
     padding-left: 0;
 }
 
-header > nav > ul > li > button {
+header > nav > div:nth-child(1) > ul > li > button {
     color: black;
     background-color: #4D4F50;
     border-style: none;
@@ -70,7 +101,7 @@ header > nav > ul > li > button {
     font-weight: bold;
 }
 
-header > nav > ul > li > button:hover {
+header > nav > div:nth-child(1) > ul > li > button:hover {
     background-color: #474949;
 }
 
@@ -105,6 +136,11 @@ header > nav > ul > li > button:hover {
     margin-top: auto;
     margin-bottom: auto;
     padding-right: 10px;
+}
+
+.link_logos {
+    display: flex;
+    gap:4px
 }
 
 .drop_down_menu:hover > div{
@@ -170,7 +206,6 @@ header > nav > ul > li > button:hover {
 #main_origins_video video {
     width: 320px;
     height: 240px;
-    display: block;
 }
 
 h3 {
@@ -198,7 +233,6 @@ h3 {
 #default_origins img{
     width: auto;
     height: 100%;
-    display: block;
     max-height: 361px;
     max-width: 100%;
 }
@@ -355,4 +389,42 @@ h4 a {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+
+/*testing some things*/
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+  
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 80%;
+    padding: 20px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

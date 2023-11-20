@@ -22,3 +22,21 @@ function scrollToTarget(targetId) {
       behavior: 'smooth'
     });
 }
+
+//testing some things
+
+var span = document.getElementsByClassName("close")[0];
+
+settings.onclick = function() {
+  settings_modal.style.display = "block";
+}
+
+span.onclick = function() {
+    settings_modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == settings_modal) {
+    settings_modal.style.display = "none";
+  }
+}

@@ -10,6 +10,7 @@
     <header id = "index_header">
       <h1>Megadoxs's Origins</h1>
       <nav id = "navbar">
+        <div>
         <ul>
           <li class = "drop_down_menu">
             <button onclick="location.href = './index.html'">Home</button>
@@ -31,13 +32,24 @@
           <li><button onclick="location.href = './forum.html'">Forum</button></li>
           <li><button onclick="location.href = '#contacts'">Contacts</button></li>
         </ul>
+      </div>
+      <div>
+        <button id = "settings"><img src = "setting.png"></button>
+        <div id="settings_modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+          </div>
+        
+        </div>
+      </div>
       </nav>
     </header>
     <main id = "index_main">
       <div id = "origins">
         <div>
           <h2>Origins Mod</h2>
-          <div id = "index_main_link_images">
+          <div id = "index_main_link_images" class="link_logos">
             <a href = "https://github.com/apace100/origins-fabric"><img src = "github.png"></a>
             <a href = "https://www.curseforge.com/minecraft/mc-mods/origins"><img src = "curseforge.png"></a>
             <a href = "https://modrinth.com/mod/origins/version/1.11.3"><img src = "modrinth.png"></a>
@@ -88,7 +100,7 @@
       <div id = "minecraft_datapacks">
         <div>
           <h2>Minecraft datapacks</h2>
-          <div>
+          <div class="link_logos">
             <a href = "https://minecraft.fandom.com/wiki/Data_pack"><img src = "fandom.png"></a>
             <a href = "https://discord.gg/QAFXFtZ"><img src = "discord.png"></a>
           </div>
@@ -97,15 +109,23 @@
       <div id = "origins_datapacks">
         <div>
           <h2>Origins datapacks</h2>
-          <div>
+          <div class="link_logos">
             <a href = "https://origins.readthedocs.io/en/latest/"><img src = "origins.png"></a>
             <a href = "https://discord.gg/GTfTswZcFT"><img src = "discord.png"></a>
           </div>
         </div>
           <div>
             <div>
+              <h3>Defining an origin</h3>
+            </div>
+            <div>
+              
+            </div>
+          </div>
+          <div>
+            <div>
               <div>
-                <h3>Powers</h3>
+                <h3>Defining a Powers</h3>
               </div>
               <div id = "power_description">
                 <div>
