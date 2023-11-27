@@ -28,7 +28,7 @@ function scrollToTarget(targetId) {
 var span = document.getElementsByClassName("close")[0];
 
 settings.onclick = function() {
-  settings_modal.style.display = "block";
+  settings_modal.style.display = "flex";
 }
 
 span.onclick = function() {
