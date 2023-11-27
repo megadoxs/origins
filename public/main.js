@@ -1,3 +1,4 @@
+//sticky nav
 window.onscroll = function() {Stickynav()};
 
 var sticky = navbar.offsetTop;  
@@ -23,7 +24,7 @@ function scrollToTarget(targetId) {
     });
 }
 
-//testing some things
+//setting modal
 
 var span = document.getElementsByClassName("close")[0];
 
@@ -38,5 +39,19 @@ span.onclick = function() {
 window.onclick = function(event) {
   if (event.target == settings_modal) {
     settings_modal.style.display = "none";
+  }
+}
+
+// setting icon rotation
+var isHovered;
+settings_icon.onmouseenter = function() {rotate_icon(isHovered = true)}; 
+settings_icon.onmouseleave = function() {rotate_icon(isHovered = false)}; 
+
+function rotate_icon() {
+  if (isHovered) {
+    settings_icon.style.transform = `rotate(90deg)`;
+  }
+  else {
+    settings_icon.style.transform = `rotate(0deg)`;
   }
 }

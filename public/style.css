@@ -5,6 +5,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden
 }
 
 h1 {
@@ -428,4 +429,8 @@ h4 a {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+#settings_icon { 
+    transition: transform 0.6s ease-in;
 }
