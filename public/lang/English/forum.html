@@ -7,14 +7,50 @@
     <link href="../../style.css" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <h1>Meagdoxs's Origins</h1>
-      <nav>
+    <header id = "index_header">
+      <h1>Megadoxs's Origins</h1>
+      <nav id = "navbar">
+        <div>
         <ul>
-          <li><button onclick="location.href = './index.html'">Home</button></li>
+          <li class = "drop_down_menu">
+            <button onclick="location.href = './index.html'">Home</button>
+          </li>>
+          </li>
+          <li class = "drop_down_menu">
+            <button>Origins</button>
+            <div>
+              <button onclick="location.href = './rimuru.html'">Rimuru</button>
+              <button onclick="location.href = './werewolf.html'">Werewolf</button>
+              <button onclick="location.href = './vampire.html'">Vampire</button>
+            </div>
+          </li>
           <li><button onclick="location.href = './forum.html'">Forum</button></li>
-          <li><button onclick="location.href = './origins.html'">Origins</button></li>
+          <li><button onclick="location.href = '#contacts'">Contacts</button></li>
         </ul>
+      </div>
+      <div>
+        <button id = "settings"><img id = "settings_icon" src = "../../images/setting.png"></button>
+        <div id="settings_modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Settings</h2>
+            <div class="custom-select">
+              <label for = "language">Select your language:</label>
+              <select name = "language">
+                <option value="0">English</option>
+                <option value="1">French</option>
+              </select>
+            </div>
+            <div class="custom-select">
+              <label for = "mode-selecter">Select your mode:</label>
+              <select name = "mode-selecter">
+                <option value="0">Night mode</option>
+                <option value="1">Day mode</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
       </nav>
     </header>
     <main>
