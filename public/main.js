@@ -34,24 +34,30 @@ settings.onclick = function() {
 
 span.onclick = function() {
     settings_modal.style.display = "none";
+    rotate_icon(settings_Clicked = false);
 }
 
 window.onclick = function(event) {
   if (event.target == settings_modal) {
     settings_modal.style.display = "none";
+    rotate_icon(settings_Clicked = false);
   }
 }
 
 // setting icon rotation
-var isHovered;
-settings_icon.onmouseenter = function() {rotate_icon(isHovered = true)}; 
-settings_icon.onmouseleave = function() {rotate_icon(isHovered = false)}; 
+var settings_Hovered;
+var settings_Clicked;
+settings_icon.onmouseenter = function() {rotate_icon(settings_Hovered = true)}; 
+settings_icon.onclick = function() {rotate_icon(settings_Clicked = true)}; 
+settings_icon.onmouseleave = function() {rotate_icon(settings_Hovered = false)}; 
 
 function rotate_icon() {
-  if (isHovered) {
+  if (settings_Hovered || settings_Clicked) {
     settings_icon.style.transform = `rotate(90deg)`;
   }
   else {
     settings_icon.style.transform = `rotate(0deg)`;
   }
 }
+
+// adding images to language select menu 
