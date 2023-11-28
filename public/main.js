@@ -26,21 +26,30 @@ function scrollToTarget(targetId) {
 
 //setting modal
 
-var span = document.getElementsByClassName("close")[0];
+var close = document.getElementsByClassName("close")[0];
 
 settings.onclick = function() {
   settings_modal.style.display = "flex";
 }
 
-span.onclick = function() {
+close.onclick = function() {
     settings_modal.style.display = "none";
+    custom_select_options.style.display = "none";
     rotate_icon(settings_Clicked = false);
+    custom_select();
 }
 
 window.onclick = function(event) {
   if (event.target == settings_modal) {
     settings_modal.style.display = "none";
+    custom_select_options.style.display = "none";
     rotate_icon(settings_Clicked = false);
+    
+  }
+
+  else if (event.target != custom_select_menu && event.target != custom_select_display && event.target != custom_select_logo_display) {
+    custom_select_options.style.display = "none";
+    custom_select();
   }
 }
 
@@ -60,4 +69,47 @@ function rotate_icon() {
   }
 }
 
-// adding images to language select menu 
+// custom select menu
+
+var selected;
+function custom_select(){
+  switch (selected){
+    case 0:
+      custom_select_display.innerHTML = (custom_select_0_text.innerHTML + " &nbsp;&#11167; &nbsp;");
+      custom_select_logo_display.src = custom_select_logo_0.src;
+      custom_select_1.classList.remove("selected");
+      custom_select_0.classList.add("selected");
+      if (window.location.pathname != 'public/lang/English/index.html' && window.location.pathname != '/index.html' && window.location.pathname != 'public/lang/English/' && window.location.pathname != '/'){
+        window.location.href = "public/lang/English/";
+      }
+      break;
+    case 1:
+      custom_select_display.innerHTML = (custom_select_1_text.innerHTML + " &nbsp;&#11167; &nbsp;");
+      custom_select_logo_display.src = custom_select_logo_1.src;
+      custom_select_0.classList.remove("selected");
+      custom_select_1.classList.add("selected");
+      if (window.location.pathname != 'public/lang/French/index.html' && window.location.pathname != 'public/lang/French/'){
+        window.location.href = "public/lang/French/";
+      }
+      break;
+  }
+}
+
+custom_select_options.onmouseenter = function(){
+  custom_select_0.classList.remove("selected");
+  custom_select_1.classList.remove("selected");
+}; 
+
+custom_select_options.onmouseleave = function(){
+  custom_select();
+}; 
+
+function open_select() {
+  if(custom_select_options.style.display == "none"){
+    custom_select_options.style.display = "flex";
+  }
+  else {
+    custom_select_options.style.display = "none";
+    custom_select();
+  }
+}
