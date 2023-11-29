@@ -70,6 +70,22 @@ function rotate_icon() {
 // custom select menu
 
 var lang;
+function lang_display_set(lang){
+  switch (lang){
+    case 0:
+      lang_selector_display.innerHTML = (lang_selector_0_text.innerHTML + " &nbsp;&#11167; &nbsp;");
+      lang_selector_logo_display.src = lang_selector_logo_0.src;
+      lang_selector_1.classList.remove("selected");
+      lang_selector_0.classList.add("selected");
+      break;
+    case 1:
+      lang_selector_display.innerHTML = (lang_selector_1_text.innerHTML + " &nbsp;&#11167; &nbsp;");
+      lang_selector_logo_display.src = lang_selector_logo_1.src;
+      lang_selector_0.classList.remove("selected");
+      lang_selector_1.classList.add("selected");
+      break;
+  }
+}
 function lang_selector(lang){
   switch (lang){
     case 0:
@@ -80,6 +96,9 @@ function lang_selector(lang){
       if (window.location.toString().includes("lang") && !window.location.toString().includes("English")){
         window.location.href = window.location.href.replace('French', 'English');
       }
+      else if(!window.location.toString().includes("lang")){
+        window.location.href ="./public/lang/English/"
+      }
       break;
     case 1:
       lang_selector_display.innerHTML = (lang_selector_1_text.innerHTML + " &nbsp;&#11167; &nbsp;");
@@ -88,6 +107,9 @@ function lang_selector(lang){
       lang_selector_1.classList.add("selected");
       if (window.location.toString().includes("lang") && !window.location.toString().includes("French")){
         window.location.href = window.location.href.replace('English', 'French');
+      }
+      else if(!window.location.toString().includes("lang")){
+        window.location.href ="./public/lang/French/"
       }
       break;
   }

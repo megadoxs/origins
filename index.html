@@ -6,7 +6,7 @@
     <title>Megadoxs's Origins</title>
     <link href="public/style.css" rel="stylesheet">
   </head>
-  <body onload = "lang_selector(lang = 0)">
+  <body onload = "lang_display_set(0)">
     <header id = "index_header">
       <h1>Megadoxs's Origins</h1>
       <nav id = "navbar">
@@ -44,8 +44,8 @@
               <li id = "lang_selector_menu">
                 <button onclick="open_lang_selector()"><img id = "lang_selector_logo_display" src = "public/images/USA.png"><p id ="lang_selector_display">English</p></button>
                 <div id = "lang_selector_options">
-                  <button id = "lang_selector_0" onclick="lang_selector(lang = 0)"><img id = "lang_selector_logo_0" src = "public/images/USA.png"><p id = "lang_selector_0_text">English</p></button>
-                  <button id = "lang_selector_1" onclick="lang_selector(lang = 1)"><img id = "lang_selector_logo_1" src = "public/images/Canada.png"><p id = "lang_selector_1_text">French</p></button>
+                  <button id = "lang_selector_0" onclick="lang_selector(0)"><img id = "lang_selector_logo_0" src = "public/images/USA.png"><p id = "lang_selector_0_text">English</p></button>
+                  <button id = "lang_selector_1" onclick="lang_selector(1)"><img id = "lang_selector_logo_1" src = "public/images/Canada.png"><p id = "lang_selector_1_text">French</p></button>
                 </div>
               </li>
             </div>
