@@ -456,45 +456,52 @@ h4 a {
 }
 
 .selected {
-    background-color: blue;
-    color:white;
+    background-color: blue !important;
+    color:white !important;
 }
 
-#custom_select_menu {
+#lang_selector_menu {
     position: relative;
     display: inline-block;
 }
 
-#custom_select_menu > div {
+#lang_selector_menu > div {
     position: absolute;
     z-index: 1;
     width: 100%;
     flex-direction: column;
 }
 
-#custom_select_menu > div > button{
+#lang_selector_menu > button {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+#lang_selector_menu > div > button{
     padding-top: 5px;
     padding-bottom: 5px;
     border-style: none;
     cursor: pointer;
     font-weight: bold;
+    background-color: white;
 }
 
-#custom_select_menu > div > button:nth-of-type(1){
+#lang_selector_menu > div > button:nth-of-type(1){
     border-top: 1px solid gray;
     border-left: 1px solid gray;
     border-right: 1px solid gray;
     border-radius: 3px 3px 0 0;
 }
 
-#custom_select_menu > div > button:nth-of-type(2){
+#lang_selector_menu > div > button:nth-of-type(2){
     border-left: 1px solid gray;
     border-right: 1px solid gray;
     border-bottom: 1px solid gray;
     border-radius: 0 0 3px 3px;
 }
 
-#custom_select_menu > div > button:hover{
+#lang_selector_menu > div > button:hover{
     background-color: blue;
     color: white;
 }

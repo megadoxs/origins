@@ -34,22 +34,20 @@ settings.onclick = function() {
 
 close.onclick = function() {
     settings_modal.style.display = "none";
-    custom_select_options.style.display = "none";
+    lang_selector_options.style.display = "none";
     rotate_icon(settings_Clicked = false);
-    custom_select();
+    lang_selector(lang);
 }
 
 window.onclick = function(event) {
   if (event.target == settings_modal) {
     settings_modal.style.display = "none";
-    custom_select_options.style.display = "none";
+    lang_selector_options.style.display = "none";
     rotate_icon(settings_Clicked = false);
-    
   }
-
-  else if (event.target != custom_select_menu && event.target != custom_select_display && event.target != custom_select_logo_display) {
-    custom_select_options.style.display = "none";
-    custom_select();
+  else if (event.target != lang_selector_menu && event.target != lang_selector_display && event.target != lang_selector_logo_display) {
+    lang_selector_options.style.display = "none";
+    lang_selector(lang);
   }
 }
 
@@ -71,45 +69,46 @@ function rotate_icon() {
 
 // custom select menu
 
-var selected;
-function custom_select(){
-  switch (selected){
+var lang;
+function lang_selector(lang){
+  switch (lang){
     case 0:
-      custom_select_display.innerHTML = (custom_select_0_text.innerHTML + " &nbsp;&#11167; &nbsp;");
-      custom_select_logo_display.src = custom_select_logo_0.src;
-      custom_select_1.classList.remove("selected");
-      custom_select_0.classList.add("selected");
-      if (window.location.pathname != 'public/lang/English/index.html' && window.location.pathname != '/index.html' && window.location.pathname != 'public/lang/English/' && window.location.pathname != '/'){
-        window.location.href = "public/lang/English/";
+      lang_selector_display.innerHTML = (lang_selector_0_text.innerHTML + " &nbsp;&#11167; &nbsp;");
+      lang_selector_logo_display.src = lang_selector_logo_0.src;
+      lang_selector_1.classList.remove("selected");
+      lang_selector_0.classList.add("selected");
+      if (window.location.pathname != '/public/lang/English/index.html' && window.location.pathname != '/index.html' && window.location.pathname != '/public/lang/English/' && window.location.pathname != '/'){
+        window.location.href = "/public/lang/English/"; 
       }
       break;
     case 1:
-      custom_select_display.innerHTML = (custom_select_1_text.innerHTML + " &nbsp;&#11167; &nbsp;");
-      custom_select_logo_display.src = custom_select_logo_1.src;
-      custom_select_0.classList.remove("selected");
-      custom_select_1.classList.add("selected");
-      if (window.location.pathname != 'public/lang/French/index.html' && window.location.pathname != 'public/lang/French/'){
-        window.location.href = "public/lang/French/";
+      lang_selector_display.innerHTML = (lang_selector_1_text.innerHTML + " &nbsp;&#11167; &nbsp;");
+      lang_selector_logo_display.src = lang_selector_logo_1.src;
+      lang_selector_0.classList.remove("selected");
+      lang_selector_1.classList.add("selected");
+      if (window.location.pathname != '/public/lang/French/index.html' && window.location.pathname != '/public/lang/French/'){
+        window.location.href = "/public/lang/French/";
       }
       break;
   }
 }
 
-custom_select_options.onmouseenter = function(){
-  custom_select_0.classList.remove("selected");
-  custom_select_1.classList.remove("selected");
-}; 
-
-custom_select_options.onmouseleave = function(){
-  custom_select();
-}; 
-
-function open_select() {
-  if(custom_select_options.style.display == "none"){
-    custom_select_options.style.display = "flex";
+function open_lang_selector() {
+  if(lang_selector_options.style.display == "none"){
+    lang_selector_options.style.display = "flex";
   }
   else {
-    custom_select_options.style.display = "none";
-    custom_select();
+    lang_selector_options.style.display = "none";
+    lang_selector(lang);
   }
 }
+
+
+lang_selector_options.onmouseenter = function(){
+  lang_selector_0.classList.remove("selected");
+  lang_selector_1.classList.remove("selected");
+}; 
+
+lang_selector_options.onmouseleave = function(){
+  lang_selector(lang);
+}; 
