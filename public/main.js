@@ -78,7 +78,7 @@ function lang_selector(lang){
       lang_selector_1.classList.remove("selected");
       lang_selector_0.classList.add("selected");
       if (window.location.pathname != '/public/lang/English/index.html' && window.location.pathname != '/index.html' && window.location.pathname != '/public/lang/English/' && window.location.pathname != '/'){
-        window.location.href = "/public/lang/English/"; 
+        window.location.href = window.location.href.replace('French', 'English');
       }
       break;
     case 1:
@@ -87,7 +87,7 @@ function lang_selector(lang){
       lang_selector_0.classList.remove("selected");
       lang_selector_1.classList.add("selected");
       if (window.location.pathname != '/public/lang/French/index.html' && window.location.pathname != '/public/lang/French/'){
-        window.location.href = "/public/lang/French/";
+        window.location.href = window.location.href.replace('English', 'French');
       }
       break;
   }
