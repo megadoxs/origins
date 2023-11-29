@@ -36,7 +36,7 @@ close.onclick = function() {
     settings_modal.style.display = "none";
     lang_selector_options.style.display = "none";
     rotate_icon(settings_Clicked = false);
-    lang_selector(lang);
+    lang_display_set(lang);
 }
 
 window.onclick = function(event) {
@@ -47,7 +47,7 @@ window.onclick = function(event) {
   }
   else if (event.target != lang_selector_menu && event.target != lang_selector_display && event.target != lang_selector_logo_display) {
     lang_selector_options.style.display = "none";
-    lang_selector(lang);
+    lang_display_set(lang);
   }
 }
 
@@ -87,24 +87,14 @@ function lang_display_set(lang){
   }
 }
 function lang_selector(lang){
+  lang_display_set(lang);
   switch (lang){
     case 0:
-      lang_selector_display.innerHTML = (lang_selector_0_text.innerHTML + " &nbsp;&#11167; &nbsp;");
-      lang_selector_logo_display.src = lang_selector_logo_0.src;
-      lang_selector_1.classList.remove("selected");
-      lang_selector_0.classList.add("selected");
       if (window.location.toString().includes("lang") && !window.location.toString().includes("English")){
         window.location.href = window.location.href.replace('French', 'English');
       }
-      else if(!window.location.toString().includes("lang")){
-        window.location.href ="./public/lang/English/"
-      }
       break;
     case 1:
-      lang_selector_display.innerHTML = (lang_selector_1_text.innerHTML + " &nbsp;&#11167; &nbsp;");
-      lang_selector_logo_display.src = lang_selector_logo_1.src;
-      lang_selector_0.classList.remove("selected");
-      lang_selector_1.classList.add("selected");
       if (window.location.toString().includes("lang") && !window.location.toString().includes("French")){
         window.location.href = window.location.href.replace('English', 'French');
       }
@@ -121,7 +111,7 @@ function open_lang_selector() {
   }
   else {
     lang_selector_options.style.display = "none";
-    lang_selector(lang);
+    lang_display_set(lang);
   }
 }
 
@@ -132,5 +122,5 @@ lang_selector_options.onmouseenter = function(){
 }; 
 
 lang_selector_options.onmouseleave = function(){
-  lang_selector(lang);
+  lang_display_set(lang);
 }; 
