@@ -90,7 +90,7 @@ function lang_display_set(lang){
 }
 
 function lang_selector(lang){
-  lang_display_set();
+  lang_display_set(lang);
   switch (lang){
     case 0:
       if (window.location.toString().includes("lang") && !window.location.toString().includes("English")){
@@ -122,5 +122,18 @@ function lang_highlight_del(){
   lang_selector_0.classList.remove("selected");
   lang_selector_1.classList.remove("selected");
 }; 
+
+function lang_highlight_set(lang){
+  switch (lang){
+    case 0:
+      lang_selector_1.classList.remove("selected");
+      lang_selector_0.classList.add("selected");
+      break;
+    case 1:
+      lang_selector_0.classList.remove("selected");
+      lang_selector_1.classList.add("selected");
+      break;
+  }
+}
 
 //
