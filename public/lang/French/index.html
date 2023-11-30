@@ -41,13 +41,13 @@
             <h2>Settings</h2>
             <div id="lang_select">
               <label for = "language">Select your language:</label>
-              <li id = "lang_selector_menu">
+              <div id = "lang_selector_menu">
                 <button onclick="open_lang_selector()"><img id = "lang_selector_logo_display" src = "../../images/USA.png"><p id ="lang_selector_display">English</p></button>
-                <div id = "lang_selector_options">
+                <div id = "lang_selector_options" onmouseleave="lang_display_set(1)" onmouseenter="lang_highlight_del()">
                   <button id = "lang_selector_0" onclick="lang_selector(0)"><img id = "lang_selector_logo_0" src = "../../images/USA.png"><p id = "lang_selector_0_text">English</p></button>
                   <button id = "lang_selector_1" onclick="lang_selector(1)"><img id = "lang_selector_logo_1" src = "../../images/Canada.png"><p id = "lang_selector_1_text">French</p></button>
                 </div>
-              </li>
+              </div>
             </div>
             <div class="lang_select">
               <label for = "mode_selecter">Select your mode:</label>

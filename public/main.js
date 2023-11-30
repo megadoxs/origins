@@ -36,7 +36,7 @@ close.onclick = function() {
     settings_modal.style.display = "none";
     lang_selector_options.style.display = "none";
     rotate_icon(settings_Clicked = false);
-    lang_display_set(lang);
+    lang_display_set();
 }
 
 window.onclick = function(event) {
@@ -47,7 +47,7 @@ window.onclick = function(event) {
   }
   else if (event.target != lang_selector_menu && event.target != lang_selector_display && event.target != lang_selector_logo_display) {
     lang_selector_options.style.display = "none";
-    lang_display_set(lang);
+    lang_display_set();
   }
 }
 
@@ -69,6 +69,8 @@ function rotate_icon() {
 
 // custom select menu
 
+// 1- language selector 
+
 var lang;
 function lang_display_set(lang){
   switch (lang){
@@ -86,8 +88,9 @@ function lang_display_set(lang){
       break;
   }
 }
+
 function lang_selector(lang){
-  lang_display_set(lang);
+  lang_display_set();
   switch (lang){
     case 0:
       if (window.location.toString().includes("lang") && !window.location.toString().includes("English")){
@@ -111,16 +114,13 @@ function open_lang_selector() {
   }
   else {
     lang_selector_options.style.display = "none";
-    lang_display_set(lang);
+    lang_display_set();
   }
 }
 
-
-lang_selector_options.onmouseenter = function(){
+function lang_highlight_del(){
   lang_selector_0.classList.remove("selected");
   lang_selector_1.classList.remove("selected");
 }; 
 
-lang_selector_options.onmouseleave = function(){
-  lang_display_set(lang);
-}; 
+//
