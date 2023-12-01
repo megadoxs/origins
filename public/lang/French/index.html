@@ -6,7 +6,7 @@
     <title>Megadoxs's Origins</title>
     <link href="../../style.css" rel="stylesheet">
   </head>
-  <body onload = "lang_display_set(1)">
+  <body onload = "lang_display_set(lang), mode_display_set(mode)">
     <header id = "index_header">
       <h1>Megadoxs's Origins</h1>
       <nav id = "navbar">
@@ -39,22 +39,41 @@
           <div id="modal_content">
             <span class="close">&times;</span>
             <h2>Settings</h2>
-            <div id="lang_select">
+            <div id="lang_select" class = "custom_select">
               <label for = "language">Select your language:</label>
               <div id = "lang_selector_menu">
-                <button onclick="open_lang_selector()"><img id = "lang_selector_logo_display" src = "../../images/USA.png"><p id ="lang_selector_display">English</p></button>
-                <div id = "lang_selector_options" onmouseleave="lang_highlight_set(1)" onmouseenter="lang_highlight_del()">
+                <button onclick="open_lang_selector()">
+                  <div>
+                    <img id = "lang_selector_logo_display" src = "../../images/USA.png">
+                    <p id ="lang_selector_display">English</p>
+                  </div>
+                  <div>
+                    <p>&#11167; &nbsp;&nbsp;</p>
+                  </div>
+                </button>
+                <div id = "lang_selector_options" onmouseleave="lang_highlight_set()" onmouseenter="lang_highlight_del()">
                   <button id = "lang_selector_0" onclick="lang_selector(0)"><img id = "lang_selector_logo_0" src = "../../images/USA.png"><p id = "lang_selector_0_text">English</p></button>
                   <button id = "lang_selector_1" onclick="lang_selector(1)"><img id = "lang_selector_logo_1" src = "../../images/Canada.png"><p id = "lang_selector_1_text">French</p></button>
                 </div>
               </div>
             </div>
-            <div class="lang_select">
+            <div id="mode_select" class = "custom_select">
               <label for = "mode_selecter">Select your mode:</label>
-              <select name = "mode_selecter">
-                <option value="0">Night mode</option>
-                <option value="1">Day mode</option>
-              </select>
+              <div id = "mode_selector_menu">
+                <button onclick="open_mode_selector()">
+                  <div>
+                    <img id = "mode_selector_logo_display" src = "../../images/USA.png">
+                    <p id ="mode_selector_display">Night Mode</p>
+                  </div>
+                  <div>
+                    <p>&#11167; &nbsp;&nbsp;</p>
+                  </div>
+                </button>
+                <div id = "mode_selector_options" onmouseleave="mode_highlight_set()">
+                  <button id = "mode_selector_0" onclick="mode_selector(0)" onmouseenter="mode_highlight_del()"><img id = "mode_selector_logo_0" src = "../../images/USA.png"><p id = "mode_selector_0_text">Night Mode</p></button>
+                  <button id = "mode_selector_1" onclick="mode_selector(1)" onmouseenter="mode_highlight_del()"><img id = "mode_selector_logo_1" src = "../../images/Canada.png"><p id = "mode_selector_1_text">Day Mode</p></button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -439,17 +439,17 @@ h4 a {
     padding-bottom: 20px;
 }
 
-#lang_select button {
+.custom_select > div > button > div, .custom_select button {
     display: flex;
     align-items: center;
 }
 
-#lang_select img {
+.custom_select img {
     width: auto;
     height: 15px;
 }
 
-#lang_select{
+.custom_select {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -460,29 +460,33 @@ h4 a {
     color:white !important;
 }
 
-#lang_selector_menu {
+.custom_select > div {
     position: relative;
     display: inline-block;
 }
 
-#lang_selector_menu > div {
+.custom_select > div > div {
     position: absolute;
     z-index: 1;
     width: 100%;
     flex-direction: column;
 }
 
-#lang_selector_menu button {
+#lang_select button {
     width: 110px
 }
 
-#lang_selector_menu > button {
+#mode_select button {
+    width: 135px
+}
+
+.custom_select > div > button {
     background-color: white;
     border: 1px solid gray;
     border-radius: 3px;
 }
 
-#lang_selector_menu > div > button{
+.custom_select > div > div > button{
     padding-top: 5px;
     padding-bottom: 5px;
     border-style: none;
@@ -491,21 +495,26 @@ h4 a {
     background-color: white;
 }
 
-#lang_selector_menu > div > button:nth-of-type(1){
+.custom_select > div > div > button:nth-of-type(1){
     border-top: 1px solid gray;
     border-left: 1px solid gray;
     border-right: 1px solid gray;
     border-radius: 3px 3px 0 0;
 }
 
-#lang_selector_menu > div > button:nth-of-type(2){
+.custom_select > div > div > button:nth-of-type(2){
     border-left: 1px solid gray;
     border-right: 1px solid gray;
     border-bottom: 1px solid gray;
     border-radius: 0 0 3px 3px;
 }
 
-#lang_selector_menu > div > button:hover{
+.custom_select > div > div > button:hover{
     background-color: blue;
     color: white;
+}
+
+.custom_select > div > button {
+    display: flex;
+    justify-content: space-between;
 }
