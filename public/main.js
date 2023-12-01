@@ -79,17 +79,17 @@ function rotate_icon() {
 // 1- language selector 
 
 var lang = localStorage.getItem('lang') || '0';
-lang = parseInt(mode, 10);
-var langSelected
-function lang_display_set(lang){
-  switch (lang){
+lang = parseInt(lang, 10);
+
+function lang_display_set(input){
+  switch (input){
     case 0:
       lang_selector_display.innerHTML = (lang_selector_0_text.innerHTML);
       lang_selector_logo_display.src = lang_selector_logo_0.src;
       lang_selector_1.classList.remove("selected");
       lang_selector_0.classList.add("selected");
       localStorage.setItem('lang',  '0');
-      langSelected = 0;
+      lang = 0;
       break;
     case 1:
       lang_selector_display.innerHTML = (lang_selector_1_text.innerHTML);
@@ -97,14 +97,14 @@ function lang_display_set(lang){
       lang_selector_0.classList.remove("selected");
       lang_selector_1.classList.add("selected");
       localStorage.setItem('lang',  '1');
-      langSelected = 1;
+      lang = 1;
       break;
   }
 }
 
-function lang_selector(lang){
-  lang_display_set(lang);
-  switch (lang){
+function lang_selector(input){
+  lang_display_set(input);
+  switch (input){
     case 0:
       if (window.location.toString().includes("lang") && !window.location.toString().includes("English")){
         window.location.href = window.location.href.replace('French', 'English');
@@ -137,7 +137,7 @@ function lang_highlight_del(){
 }; 
 
 function lang_highlight_set(){
-  switch (langSelected){
+  switch (lang){
     case 0:
       lang_selector_1.classList.remove("selected");
       lang_selector_0.classList.add("selected");
@@ -153,16 +153,15 @@ function lang_highlight_set(){
 
 var mode = localStorage.getItem('mode') || '0';
 mode = parseInt(mode, 10);
-var modeSelected;
-function mode_display_set(mode){
-  switch (mode){
+function mode_display_set(input){
+  switch (input){
     case 0:
       mode_selector_display.innerHTML = (mode_selector_0_text.innerHTML);
       mode_selector_logo_display.src = mode_selector_logo_0.src;
       mode_selector_1.classList.remove("selected");
       mode_selector_0.classList.add("selected");
       localStorage.setItem('mode',  '0');
-      modeSelected = 0;
+      mode = 0;
       break;
     case 1:
       mode_selector_display.innerHTML = (mode_selector_1_text.innerHTML);
@@ -170,7 +169,7 @@ function mode_display_set(mode){
       mode_selector_0.classList.remove("selected");
       mode_selector_1.classList.add("selected");
       localStorage.setItem('mode', '1');
-      modeSelected = 1;
+      mode = 1;
       break;
   }
 }
@@ -191,7 +190,7 @@ function mode_highlight_del(){
 }; 
 
 function mode_highlight_set(){
-  switch (modeSelected){
+  switch (mode){
     case 0:
       mode_selector_1.classList.remove("selected");
       mode_selector_0.classList.add("selected");
@@ -203,12 +202,12 @@ function mode_highlight_set(){
   }
 }
 
-function mode_selector(mode){
-  switch (mode){
+function mode_selector(input){ // will give a class to change the colors, will most likely have to use !important
+  mode_display_set(input);
+  switch (input){
     case 0:
       break;
     case 1:
       break;
   }
-  mode_display_set(mode); // not done XD
 }
