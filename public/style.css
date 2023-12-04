@@ -490,8 +490,6 @@ h4 a {
     padding-top: 5px;
     padding-bottom: 5px;
     border-style: none;
-    cursor: pointer;
-    font-weight: bold;
     background-color: white;
 }
 
@@ -517,4 +515,14 @@ h4 a {
 .custom_select > div > button {
     display: flex;
     justify-content: space-between;
+}
+
+#mode_select button, 
+#lang_select button {
+    cursor: pointer;
+}
+
+#mode_select > div,
+#lang_select > div {
+    margin-left: 5px
 }

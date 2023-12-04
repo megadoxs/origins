@@ -48,11 +48,11 @@ window.onclick = function(event) {
     mode_selector_options.style.display = "none";
     rotate_icon(settings_Clicked = false);
   }
-  if (event.target != lang_selector_menu && event.target != lang_selector_display && event.target != lang_selector_logo_display) {
+  if (!lang_selector_menu.contains(event.target) && lang_selector_menu != event.target) {
     lang_selector_options.style.display = "none";
     lang_display_set();
   }
-  if (event.target != mode_selector_menu && event.target != mode_selector_display && event.target != mode_selector_logo_display) {
+  if (!mode_selector_menu.contains(event.target) && mode_selector_menu != event.target) {
     mode_selector_options.style.display = "none";
     mode_display_set();
   }
@@ -119,6 +119,7 @@ function lang_selector(input){
       }
       break;
   }
+  lang_selector_options.style.display = "none";
 }
 
 function open_lang_selector() {
@@ -172,6 +173,7 @@ function mode_display_set(input){
       mode = 1;
       break;
   }
+  mode_selector_options.style.display = "none";
 }
 
 function open_mode_selector() {
