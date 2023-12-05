@@ -13,8 +13,11 @@
         <div>
         <ul>
           <li class = "drop_down_menu">
-            <button onclick="location.href = './index.html'">Home</button>
-            <div>
+            <div id = "home_buttons">
+              <button id = "home_main" onclick="location.href = './index.html'">Home</button>
+              <button id = "home_arrow"><p>&#11167;</p></button>
+            </div>
+            <div id = "home_menu">
               <button onclick="scrollToTarget('origins')">Origins Mod</button>
               <button onclick="scrollToTarget('minecraft_datapacks')">Minecraft Datapacks</button>
               <button onclick="scrollToTarget('origins_datapacks')">Origins Datapacks</button>
@@ -22,8 +25,11 @@
             </div>
           </li>
           <li class = "drop_down_menu">
-            <button>Origins</button>
-            <div>
+            <div id = "origins_buttons">
+              <button id = "origins_main" onclick="location.href = './public/lang/English/origins.html'">Origins</button>
+              <button id = "origins_arrow"><p>&#11167;</p></button>
+            </div>
+            <div id = "origins_menu">
               <button onclick="location.href = './public/lang/English/rimuru.html'">Rimuru</button>
               <button onclick="location.href = './public/lang/English/werewolf.html'">Werewolf</button>
               <button onclick="location.href = './public/lang/English/vampire.html'">Vampire</button>
