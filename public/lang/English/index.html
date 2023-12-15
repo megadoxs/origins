@@ -5,44 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Megadoxs's Origins</title>
     <link href="../../style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../../images/origins.png">
   </head>
-  <body onload = "lang_selector(lang), mode_selector(mode)">
+  <body onload = "lang_selector(lang), mode_selector(mode), onLoadScrollToTarget()">
     <header id = "index_header">
-      <h1>Megadoxs's Origins</h1>
-      <nav id = "navbar">
+      <h1 id = "h1">Megadoxs's Origins</h1>
+      <nav id = "navbar" class = "navbar">
         <div>
         <ul>
           <li class = "drop_down_menu">
             <div id = "home_buttons">
-              <button id = "home_main" onclick="location.href = './index.html'">Home</button>
-              <button id = "home_arrow"><p>&#11167;</p></button>
+              <button class = "navbar" id = "home_main" onclick="location.href = './index.html'">Home</button>
+              <button class = "navbar" id = "home_arrow"><p>&#11167;</p></button>
             </div>
             <div id = "home_menu">
-              <button onclick="scrollToTarget('origins')">Origins Mod</button>
-              <button onclick="scrollToTarget('minecraft_datapacks')">Minecraft Datapacks</button>
-              <button onclick="scrollToTarget('origins_datapacks')">Origins Datapacks</button>
-              <button onclick="scrollToTarget('origins_overview')">My Origins Datapacks</button>
+              <button class = "navbar navbar_button" onclick="scrollToTarget('origins')">Origins Mod</button>
+              <button class = "navbar navbar_button" onclick="scrollToTarget('minecraft_datapacks')">Minecraft Datapacks</button>
+              <button class = "navbar navbar_button" onclick="scrollToTarget('origins_datapacks')">Origins Datapacks</button>
+              <button class = "navbar navbar_button" onclick="scrollToTarget('origins_overview')">My Origins Datapacks</button>
             </div>
           </li>
           <li class = "drop_down_menu">
             <div id = "origins_buttons">
-              <button id = "origins_main" onclick="location.href = './origins.html'">Origins</button>
-              <button id = "origins_arrow"><p>&#11167;</p></button>
+              <button class = "navbar" id = "origins_main" onclick="location.href = './origins.html'">Origins</button>
+              <button class = "navbar" id = "origins_arrow"><p>&#11167;</p></button>
             </div>
             <div id = "origins_menu">
-              <button onclick="location.href = './rimuru.html'">Rimuru</button>
-              <button onclick="location.href = './werewolf.html'">Werewolf</button>
-              <button onclick="location.href = './vampire.html'">Vampire</button>
+              <button class = "navbar navbar_button" onclick="location.href = './rimuru.html'">Rimuru</button>
+              <button class = "navbar navbar_button" onclick="location.href = './werewolf.html'">Werewolf</button>
+              <button class = "navbar navbar_button" onclick="location.href = './vampire.html'">Vampire</button>
             </div>
           </li>
-          <li><button onclick="location.href = './forum.html'">Forum</button></li>
-          <li><button onclick="location.href = '#contacts'">Contacts</button></li>
+          <li><button class = "navbar navbar_button" onclick="location.href = './post.html'">Post</button></li>
+          <li><button class = "navbar navbar_button" onclick="location.href = '#contacts'">Contacts</button></li>
         </ul>
       </div>
       <div>
-        <button id = "settings"><img id = "settings_icon" src = "../../images/setting.png"></button>
+        <button class = "navbar" id = "settings"><img id = "settings_icon" src = "../../images/setting.png"></button>
         <div id="settings_modal">
-          <div id="modal_content">
+          <div id="modal_content" class = "color4">
             <span class="close">&times;</span>
             <h2>Settings</h2>
             <div id="lang_select" class = "custom_select">
@@ -87,7 +88,7 @@
       </nav>
     </header>
     <main id = "index_main">
-      <div id = "origins">
+      <div id = "origins" class = "color3">
         <div>
           <h2>Origins Mod</h2>
           <div id = "index_main_link_../../images" class="link_logos">
@@ -138,7 +139,7 @@
               </div>
             </div>
       </div>
-      <div id = "minecraft_datapacks">
+      <div id = "minecraft_datapacks" class = "color3">
         <div>
           <h2>Minecraft datapacks</h2>
           <div class="link_logos">
@@ -146,8 +147,32 @@
             <a href = "https://discord.gg/QAFXFtZ"><img src = "../../images/discord.png"></a>
           </div>
         </div>
+        <div>
+          <div>
+            <p class = "justify_text">
+              Using minecraft datapacks is the easiest way to modify your minecraft experienc. To simplify things, a minecraft datapacks is nothing more than a folder containing files. Most of the files that can be used are written in json but one of them is written is mcfunction which is basicly one line equals one minecraft command.
+            </p>
+            <a href = "https://minecraft.fandom.com/wiki/Data_pack">Learn more</a>
+          </div>
+          <div>
+            <p>All the default folder that can be used in datapacks:</p>
+            <ul>
+              <li>Advancements</li>
+              <li>Biome</li>
+              <li>Dimension</li>
+              <li>Function</li>
+              <li>Item Modifier</li>
+              <li>Loot table</li>
+              <li>Recipe</li>
+              <li>Structure</li>
+              <li>Tag</li>
+              <li>Predicate</li>
+              <li>Damage Type</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div id = "origins_datapacks">
+      <div id = "origins_datapacks" class = "color3">
         <div>
           <h2>Origins datapacks</h2>
           <div class="link_logos">
@@ -155,399 +180,151 @@
             <a href = "https://discord.gg/GTfTswZcFT"><img src = "../../images/discord.png"></a>
           </div>
         </div>
+        <div >
           <div>
             <div>
-              <h3>Defining an origin</h3>
-            </div>
-            <div>
-              
+              <p class = "justify_text">
+                So, to make it short, by utilizing minecraft datapacks as well you can make an origin datapack. This datapack is really similar to a minecraft vinalla one apart from the folder that is added by the origins mod called power. The power folder will contain all of you origin (race) powers and they look something like the one you can see right next to this text. If we go slightly in details, power files are written in json and all possible arguments can be found on the origins's wiki.
+              </p>
             </div>
           </div>
           <div>
             <div>
-              <div>
-                <h3>Defining a Powers</h3>
-              </div>
-              <div id = "power_description">
+              <p>An example of a code for a power that make you burn for 5 seconds if you are exposed to the sun.</p>
+              <div class = code_box>
                 <div>
-                  <p class = "justify_text">
-                    Powers are used to give functionality to origins, they are json file that goes inside the power folder of your origin datapack.
-                  </p>
-                  <p>
-                    Generaly they can have up to 8 arguments from this list:
-                  </p>
-                  <ul class = "indent">
-                    <li>Type</li>
-                    <li>Actions</li>
-                    <li>Condition</li>
-                    <li>Name</li>
-                    <li>Description</li>
-                    <li>Hidden</li>
-                    <li>Badge</li>
-                    <li>Loading Priority</li>
-                  </ul>
-                  <p class = "warning_text">
-                    *Some power type don't accept action or only specificts type of action, same goes for condition.
-                  </p>
-                  <p>
-                    To make all this more clear, Next to this text is a full example of the coded of a power that would make you burn if you are exposed to the sun.
-                    Then, underneath, you can see each part of the code individually.
-                  </p>
-                </div>
-                <div>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <div class = code_box>
-                    <div>
-                      <div>
-                        <p>
-                          {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200,<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"name":"Sun Burn",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"description":"burns you when you stand under the sun",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"hidden": false <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                          }
-                        </p>
-                      </div>
-                      <div class = "download_code">
-                        <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
-                      </div>
-                    </div>
+                  <div>
+                    <p>
+                      {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"name":"Sun Burn",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"description":"burns you when you stand under the sun",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"hidden": false <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                      }
+                    </p>
+                  </div>
+                  <div class = "download_code">
+                    <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
                   </div>
                 </div>
               </div>
-              <div id = "custom_origins">
-                <!--this is going to present how you can make your own origins -->
-                  <div class>
-                    <div class = "code_description">
-                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/power_types/">Power Types</a></h4>
-                      <p class = "justify_text">
-                        <a>power types</a> are in a way a countainer that you can only be access if the general condition for the power type happend.
-                        Might be confusing so here is an example:
-                        You want to do something every 10 seconds, the best way to do so would be to use a <a>action over time</a> that does wathever is inside this "power type" every specified amount of time.
-                        This power type would then execute <a>Actions</a> that you have put in it if the <a>Conditions</a> that you gave the "power type" to execute are true.
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <div class = "code">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <div class = code_box>
-                        <div>
-                          <div>
-                            <p>
-                              {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                              }
-                            </p>
-                          </div>
-                          <div class = "download_code">
-                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class = "code_description">
-                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/action_types/">Actions</a></h4>
-                      <p class = "justify_text">
-                        <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.
-                        e.g. you want to brun the player every 10seconds.
-                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <div class = "code_description">
-                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/condition_types/">Conditions</a></h4>
-                      <p class = "justify_text">
-                        <a>Conditions</a> are well conditions that you want to be true before the <a>power types</a> executes, which they are also part of.
-                        e.g. you want to brun the player every 10seconds if the player is exposed to sun.
-                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a> and an <a>exposed to sun</a> <a>entity condition</a>.
-                      </p>
-                    </div>
-                    <div class = "code"> 
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <div class = code_box>
-                        <div>
-                          <div>
-                            <p>
-                              {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                              }
-                            </p>
-                          </div>
-                          <div class = "download_code">
-                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class = "code">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <div class = code_box>
-                        <div>
-                          <div>
-                            <p>
-                              {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                              }
-                            </p>
-                          </div>
-                          <div class = "download_code">
-                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class = "code_description">
-                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/action_types/">Name</a></h4>
-                      <p class = "justify_text">
-                        <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.
-                        e.g. you want to brun the player every 10seconds.
-                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <div class = "code_description">
-                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/condition_types/">Description</a></h4>
-                      <p class = "justify_text">
-                        <a>Conditions</a> are well conditions that you want to be true before the <a>power types</a> executes, which they are also part of.
-                        e.g. you want to brun the player every 10seconds if the player is exposed to sun.
-                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a> and an <a>exposed to sun</a> <a>entity condition</a>.
-                      </p>
-                    </div>
-                    <div class = "code">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <div class = code_box>
-                        <div>
-                          <div>
-                            <p>
-                              {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                              }
-                            </p>
-                          </div>
-                          <div class = "download_code">
-                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class = "code">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <div class = code_box>
-                        <div>
-                          <div>
-                            <p>
-                              {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                              }
-                            </p>
-                          </div>
-                          <div class = "download_code">
-                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class = "code_description">
-                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/action_types/">Hidden</a></h4>
-                      <p class = "justify_text">
-                        <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.
-                        e.g. you want to brun the player every 10seconds.
-                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <div class = "code_description">
-                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/condition_types/">Badge</a></h4>
-                      <p class = "justify_text">
-                        <a>Conditions</a> are well conditions that you want to be true before the <a>power types</a> executes, which they are also part of.
-                        e.g. you want to brun the player every 10seconds if the player is exposed to sun.
-                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a> and an <a>exposed to sun</a> <a>entity condition</a>.
-                      </p>
-                    </div>
-                    <div class = "code">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <div class = code_box>
-                        <div>
-                          <div>
-                            <p>
-                              {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                              }
-                            </p>
-                          </div>
-                          <div class = "download_code">
-                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class = "code">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <div class = code_box>
-                        <div>
-                          <div>
-                            <p>
-                              {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                              }
-                            </p>
-                          </div>
-                          <div class = "download_code">
-                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class = "code_description">
-                      <h4><a href = "https://origins.readthedocs.io/en/latest/types/action_types/">Loading Priority</a></h4>
-                      <p class = "justify_text">
-                        <a>actions</a> are events that you want to happend when the <a>power types</a> executes, which they are part of.
-                        e.g. you want to brun the player every 10seconds.
-                        you would use an <a>action over time</a> <a>power type</a> make it so that it executes every 10seconds and use a <a>burn</a> <a>entity action</a>.
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <div class = "code_description"></div>
-                    <div class = "code">
-                      <p>Lorem ipsum dolor sit amet.</p>
-                      <div class = code_box>
-                        <div>
-                          <div>
-                            <p>
-                              {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200<br>
-                              }
-                            </p>
-                          </div>
-                          <div class = "download_code">
-                            <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
             </div>
           </div>
         </div>
       </div>
-      <div id = "origins_overview">
+      <div id = "origins_overview" class = "color3">
         <div>
           <h2>My Origins datapacks</h2>
           <div>
             <a href = "https://github.com/megadoxs"><img src = "../../images/github.png"></a>
           </div>
         </div>
-          <div>
+          <div class = "color4">
             <div>
-            <h3><a href = "public/lang/English/rimuru.html">Rimuru</a></h3>
-            <div>
+            <h3><a href = "./rimuru.html">Rimuru</a></h3>
               <div>
-                <p>The rimuru origin is based of the popular character rimuru tempest from that time I was reincarnated as a slime.</p>
-              </div>
-              <div id = "main_origins_video">
                 <div>
-                  <h4>Quick Showcase:</h4>
-                  <video width="320" height="240" controls>
-                    <source src="../../videos/rimuru_short.mp4" type="video/mp4">
-                  </video>
+                  <p>The rimuru origin is based of the popular character rimuru tempest from that time I was reincarnated as a slime.</p>
+                  <p class = "warning_text">W.I.P.</p>
+                  <div>
+                    <div>
+                      <h4>Strengths:</h4>
+                      <ul>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>Weaknesses</h4>
+                      <ul>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div id = "main_origins_video">
+                  <div>
+                    <h4>Quick Showcase:</h4>
+                    <video width="320" height="240" controls>
+                      <source src="../../videos/rimuru_short.mp4" type="video/mp4">
+                    </video>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          </div>
-          <div>
+          <div class = "color4">
             <div>
-            <h3><a href = "public/lang/English/werewolf.html">Werewolf</a></h3>
-            <div>
+            <h3><a href = "./werewolf.html">Werewolf</a></h3>
               <div>
-                <p>Werewolf origin based on Warkick from league of legends.</p>
-              </div>
-              <div id = "main_origins_video">
                 <div>
-                  <h4>Quick Showcase:</h4>
-                  <video width="320" height="240" controls>
-                    <source src="../../videos/werewolf_short.mp4" type="video/mp4">
-                  </video>
+                  <p>Werewolf origin based on Warkick from league of legends.</p>
+                  <div>
+                    <div>
+                      <h4>Strengths:</h4>
+                      <ul>
+                        <li>You transform into a beast at night and an even scarier one on full moons</li>
+                        <li>Smelling blood enrages you and can only be calmed down by shedding some more</li>
+                        <li>You can smell hurt enemy that are loosing blood from afar</li>
+                        <li>When you are in your best form, driking the blood of your enemy heals you</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>Weaknesses</h4>
+                      <ul>
+                        <li>You might want to stay away from iron</li>
+                        <li>You can only eat meat</li>
+                        <li>When you de-transform your body weakens</li>
+                        <li>You have lost the ability to heal naturaly</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div id = "main_origins_video">
+                  <div>
+                    <h4>Quick Showcase:</h4>
+                    <video width="320" height="240" controls>
+                      <source src="../../videos/werewolf_short.mp4" type="video/mp4">
+                    </video>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          </div>
-          <div>
+          <div class = "color4">
             <div>
-            <h3><a href = "public/lang/English/vampire.html">Vampire</a></h3>
+            <h3><a href = "./vampire.html">Vampire</a></h3>
             <div>
               <div>
                 <p>Vampire origin based on the vampire from the minecraft mod witchery.</p>
+                <div>
+                  <div>
+                    <h4>Strengths:</h4>
+                    <ul>
+                      <li>Food bar is replaced with blood bar</li>
+                      <li>Can suck blood out of livig being dealing damage</li>
+                      <li>Can use blood to regenerate hp</li>
+                      <li>Can use blood to hide from the sun</li>
+                      <li>You are immortal as long as you have blood</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Weaknesses</h4>
+                    <ul>
+                      <li>Can't sleep</li>
+                      <li>Can't regenerate hp naturaly</li>
+                      <li>Burn to sun light</li>
+                      <li>Fire deals twice the damage</li>
+                      <li>Feel nauseous when low on blood</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
               <div id = "main_origins_video">
                 <div>
@@ -562,8 +339,22 @@
           </div>
       </div>
     </main>
-    <footer>
+    <footer class = "navbar">
       <div id = "contacts">
+        <h3>Contacts</h3>
+        <ul>
+          <li>
+            <img class = "small_icon" src = "../../images/gmail.png">
+            <p>Email:</p>
+            <a href="mailto:megadoxs@gmail.com">megadoxs@gmail.com</a>
+          </li>
+          <li>
+            <img class = "small_icon" src = "../../images/discord.png">
+            <p>Disocrd:</p>
+            <a href="https://discord.com/channels/@me">megadoxs</a>
+          </li>
+        </ul>
+        <p class = "warning_text">Copyright © 2023 mEAgadoxs industries</p>
       </div>
     </footer>
   </body>

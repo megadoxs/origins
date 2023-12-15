@@ -12,8 +12,19 @@ function Stickynav() {
     }
 }
 
-function scrollToTarget(targetId) {
+function augmentedScrollToTarget(targetId) {
+  localStorage.setItem('scroll', targetId )
+}
 
+function onLoadScrollToTarget(){
+  if (localStorage.getItem('scroll') !== null) {
+    var target = localStorage.getItem('scroll');
+    scrollToTarget(target);
+    localStorage.removeItem('scroll')
+  }
+}
+
+function scrollToTarget(targetId) {
     var targetDiv = document.getElementById(targetId);
     var navbarHeight = navbar.offsetHeight;
     var targetScrollPosition = targetDiv.offsetTop - navbarHeight;
@@ -39,8 +50,14 @@ home_menu.onmouseleave = function() {home_hover(), display_home(home_Hovered = f
 
 function home_hover(){
   if(!home_Clicked){
-    home_main.classList.toggle("nav_button_hover");
-    home_arrow.classList.toggle("nav_button_hover");
+    if(mode == 0) {
+    home_main.classList.toggle("nav_button_night_hover");
+    home_arrow.classList.toggle("nav_button_night_hover");
+    }
+    else {
+      home_main.classList.toggle("nav_button_day_hover");
+      home_arrow.classList.toggle("nav_button_day_hover");
+    }
   }
 }
 
@@ -76,8 +93,14 @@ origins_menu.onmouseleave = function() {origins_hover(), display_origins(origins
 
 function origins_hover(){
   if(!origins_Clicked){
-    origins_main.classList.toggle("nav_button_hover");
-    origins_arrow.classList.toggle("nav_button_hover");
+    if(mode == 0) {
+      origins_main.classList.toggle("nav_button_night_hover");
+      origins_arrow.classList.toggle("nav_button_night_hover");
+      }
+      else {
+        origins_main.classList.toggle("nav_button_day_hover");
+        origins_arrow.classList.toggle("nav_button_day_hover");
+      }
   }
 }
 
@@ -136,16 +159,28 @@ window.onclick = function(event) {
   }
   if (event.target != home_arrow && !home_arrow.contains(event.target) && event.target != home_menu && !home_menu.contains(event.target)){
     if(home_Clicked){
-      home_main.classList.toggle("nav_button_hover");
-      home_arrow.classList.toggle("nav_button_hover");
+      if (mode == 0) {
+        home_main.classList.toggle("nav_button_night_hover");
+        home_arrow.classList.toggle("nav_button_night_hover");
+      }
+      else {
+        home_main.classList.toggle("nav_button_day_hover");
+        home_arrow.classList.toggle("nav_button_day_hover");
+      }
     }
     home_Clicked = false;
     home_menu.style.display = "none";
   }
     if (event.target != origins_arrow && !origins_arrow.contains(event.target) && event.target != origins_menu && !origins_menu.contains(event.target)){
     if (origins_Clicked){
-      origins_main.classList.toggle("nav_button_hover");
-      origins_arrow.classList.toggle("nav_button_hover");
+      if (mode == 0) {
+        origins_main.classList.toggle("nav_button_night_hover");
+        origins_arrow.classList.toggle("nav_button_night_hover");
+      }
+      else {
+        origins_main.classList.toggle("nav_button_day_hover");
+        origins_arrow.classList.toggle("nav_button_day_hover");
+      }
     }
     origins_Clicked = false;
     origins_menu.style.display = "none";
@@ -298,12 +333,60 @@ function mode_highlight_set(){
   }
 }
 
-function mode_selector(input){ // will give a class to change the colors, will most likely have to use !important
+function mode_selector(input){
   mode_display_set(input);
   switch (input){
     case 0:
+      var color_code_boxs = document.getElementsByClassName("code_box");
+      for (var i = 0; i < color_code_boxs.length; i++) {
+        color_code_boxs[i].classList.remove("color1_daymode");
+      }
+      h1.classList.remove("color2_daymode");
+      index_main.classList.remove("color2_daymode");
+      var color_navbar = document.getElementsByClassName("navbar");
+      var test = document.getElementsByClassName("navbar_button");
+      for (var i = 0; i < color_navbar.length; i++) {
+        color_navbar[i].classList.remove("color5_daymode");
+      }
+      var daymode_color3 = document.getElementsByClassName("color3");
+      for (var i = 0; i < daymode_color3.length; i++) {
+        daymode_color3[i].classList.remove("color3_daymode");
+      }
+      var daymode_color4 = document.getElementsByClassName("color4");
+      for (var i = 0; i < daymode_color4.length; i++) {
+        daymode_color4[i].classList.remove("color4_daymode");
+      }
+      var color_nav_button = document.getElementsByClassName("navbar_button");
+      for (var i = 0; i < color_nav_button.length; i++) {
+        color_nav_button[i].classList.add("navbar_button_night");
+        color_nav_button[i].classList.remove("navbar_button_day");
+      }
       break;
     case 1:
+      var code_boxs = document.getElementsByClassName("code_box");
+      for (var i = 0; i < code_boxs.length; i++) {
+      code_boxs[i].classList.add("color1_daymode");
+      }
+      h1.classList.add("color2_daymode");
+      index_main.classList.add("color2_daymode");
+      var test = document.getElementsByClassName("navbar_button");
+      var color_navbar = document.getElementsByClassName("navbar");
+      for (var i = 0; i < color_navbar.length; i++) {
+        color_navbar[i].classList.add("color5_daymode");
+      }
+      var daymode_color3 = document.getElementsByClassName("color3");
+      for (var i = 0; i < daymode_color3.length; i++) {
+        daymode_color3[i].classList.add("color3_daymode");
+      }
+      var daymode_color4 = document.getElementsByClassName("color4");
+      for (var i = 0; i < daymode_color4.length; i++) {
+        daymode_color4[i].classList.add("color4_daymode");
+      }
+      var color_nav_button = document.getElementsByClassName("navbar_button");
+      for (var i = 0; i < color_nav_button.length; i++) {
+        color_nav_button[i].classList.add("navbar_button_day");
+        color_nav_button[i].classList.remove("navbar_button_night");
+      }
       break;
   }
 }

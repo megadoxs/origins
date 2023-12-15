@@ -55,13 +55,13 @@ img {
 }
 
 header {
-    background-color: #4D4F50; /*this color must be the same as the nav*/ 
+    background-color: #333536; /*this color must be the same as the nav*/ 
 }
 
 header > nav {
-    background-color: #4D4F50;
-    z-index: 1;
+    background-color: #333536;
     display: flex;
+    height: 55px;
 }
 
 header > nav img {
@@ -71,7 +71,7 @@ header > nav img {
 }
 
 header > nav > div:nth-child(2) > button {
-    background-color: #4D4F50;
+    background-color: #333536;
     border: 0;
     cursor: pointer;
 }
@@ -91,19 +91,16 @@ header > nav > div:nth-child(1) > ul  {
     justify-content: center;
     list-style-type: none;
     padding-left: 0;
+    gap: 20px;
 }
 
 header > nav > div:nth-child(1) > ul > li > button {
     color: black;
-    background-color: #4D4F50;
+    background-color: #333536;
     border-style: none;
     padding: 20px;
     cursor: pointer;
     font-weight: bold;
-}
-
-header > nav > div:nth-child(1) > ul > li button:hover {
-    background-color: #474949;
 }
 
 #main_origins > div > h3 > a{
@@ -167,7 +164,7 @@ header > nav > div:nth-child(1) > ul > li button:hover {
 
 .drop_down_menu button {
     border-style: none;
-    background-color: #4D4F50;
+    background-color: #333536;
     color: black;
     cursor: pointer;
     font-weight: bold;
@@ -186,10 +183,6 @@ header > nav > div:nth-child(1) > ul > li button:hover {
     border-width: 2px;
 }
 
-.nav_button_hover{
-    background-color: #474949 !important;
-}
-
 .drop_down_menu{
     position: relative;
     display: inline-block;
@@ -199,6 +192,7 @@ header > nav > div:nth-child(1) > ul > li button:hover {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
 }
 
 #origins_overview h3 a{
@@ -208,6 +202,24 @@ header > nav > div:nth-child(1) > ul > li button:hover {
 
 #origins_overview > div:not(:nth-child(1)) > div > div{
     display: flex;
+}
+
+#origins_overview > div:not(:nth-child(1)) > div > div > div:nth-child(1) > div {
+    margin-top: 10px;
+    display: flex;
+}
+
+#origins_overview > div:not(:nth-child(1)) > div > div > div:nth-child(1) > div > div {
+    width: 40%;
+    gap: 10%
+}
+
+#origins_overview ul {
+    padding-left: 20px;
+}
+
+#origins_overview li {
+    padding-top: 5px;
 }
 
 #origins_overview > div:not(:nth-child(1)) > div > div > div:nth-child(1){
@@ -292,7 +304,7 @@ h3 {
 }
 
 .code_box {
-    background-color: white;
+    background-color: #6D6F70;
     padding: 10px;
     border-radius: 10px;
     border-style: solid;
@@ -362,7 +374,6 @@ h4 a {
     padding-bottom: 20px;
 }
 
-#origins_datapacks > div:not(:nth-child(1)), 
 #origins_overview > div:not(:nth-child(1)) {
     gap: 20px;
     flex-direction: column;
@@ -373,7 +384,35 @@ h4 a {
     padding-bottom: 15px;
 }
 
-#origins_datapacks > div:not(:nth-child(1)) > div,
+#origins_datapacks > div:not(:nth-child(1)) > div:nth-child(1){
+    width: 50%;
+    padding-top: 30px;
+}
+
+#origins_datapacks > div:not(:nth-child(1)) > div:nth-child(2){
+    justify-content: center;
+    display: flex;
+    width: 50%;
+}
+
+#minecraft_datapacks > div:not(:nth-child(1)) > div:nth-child(2){
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+}
+
+#minecraft_datapacks ul {
+    columns: 3;
+    column-gap: 50px;
+    padding-left: 100px;
+    padding-top: 10px;
+}
+
+#minecraft_datapacks > div:nth-child(2) a {
+    float: right;
+}
+
 #origins_overview > div:not(:nth-child(1)) > div {
     width: 95%;
     display: flex;
@@ -384,7 +423,8 @@ h4 a {
     column-count: 2;
 }
 
-#power_description >div:nth-child(1) {
+#power_description >div:nth-child(1),
+#minecraft_datapacks > div:not(:nth-child(1)) > div:nth-child(1) {
     width: 50%;
 }
 
@@ -426,7 +466,7 @@ h4 a {
 }
   
 #modal_content {
-    background-color: #fefefe;
+    background-color: #6D6F70;
     margin: auto;
     border: 1px solid #888;
     width: 30%;
@@ -545,4 +585,71 @@ h4 a {
 #mode_select > div,
 #lang_select > div {
     margin-left: 5px
+}
+
+footer {
+    background-color: #333536;
+    height: 150px;
+}
+
+#contacts {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#contacts ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#contacts li {
+    display: flex;
+    gap: 10px;
+}
+
+.small_icon  {
+    width: 20px;
+    height: auto;
+}
+/*colors for brightmode*/ 
+.color1_daymode {
+    background-color: white !important;
+}
+
+.color2_daymode {
+    background-color: #e8e8e8 !important;
+}
+
+.color3_daymode {
+    background-color: #f0f0f0 !important;
+}
+
+.color4_daymode {
+    background-color: #f9F9f9 !important;
+}
+
+.color5_daymode {
+    background-color: #6D6F70 !important;
+}
+
+/* hover for nav with modes*/
+
+.navbar_button_day:hover {
+    background-color: #525354 !important;
+}
+
+.navbar_button_night:hover {
+    background-color: #2b2d2e !important;
+}
+
+.nav_button_day_hover {
+    background-color: #525354 !important;
+}
+
+.nav_button_night_hover{
+    background-color: #2b2d2e !important;
 }
