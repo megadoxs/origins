@@ -23,6 +23,10 @@ body {
     min-height: 100vh;
 }
 
+main {
+    flex: 1;
+}
+
 video {
     display: block;
 }
@@ -215,11 +219,11 @@ header > nav > div:nth-child(1) > ul > li > button {
 #origins_overview > div:not(:nth-child(1)) > div > div > div:nth-child(1) > div {
     margin-top: 10px;
     display: flex;
+    gap: 10%;
 }
 
 #origins_overview > div:not(:nth-child(1)) > div > div > div:nth-child(1) > div > div {
     width: 40%;
-    gap: 10%
 }
 
 #origins_overview ul {
@@ -670,8 +674,6 @@ footer {
     padding-bottom: 20px;
     justify-content: center;
     display: flex;
-    max-height: 100vh;
-    flex: 1;
 }
 
 #my_origins_main > div {
@@ -698,4 +700,66 @@ footer {
 #my_origins_main a {
     text-decoration: none;
     color: black;
+}
+
+#rimuru_main {
+    background-color: #414243;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap:20px
+}
+
+#rimuru_main > div {
+    background-color: #4D4F50;
+    width: 98%;
+    border-radius: 10px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#rimuru_main > div > div{
+    width: 95%;
+}
+
+.solo_overview > div{
+    display: flex;
+}
+
+.solo_overview > div > div:nth-child(1){
+    width: 60%;
+}
+
+.solo_overview > div > div:nth-child(2){
+    width: 40%;
+}
+
+.solo_overview > div > div:nth-child(1) > div{
+    margin-top: 10px;
+    display: flex;
+    gap:10%;
+}
+
+.solo_overview > div > div:nth-child(1) > div > div{
+    width: 40%;
+}
+
+.solo_overview ul {
+    padding-left: 20px;
+}
+
+.solo_overview li {
+    padding-top: 5px;
+}
+
+.solo_overview h3 {
+    padding-top: 0px;
+}
+
+.origin_name {
+    font-size: xx-large;
 }
