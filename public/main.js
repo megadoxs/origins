@@ -342,7 +342,8 @@ function mode_selector(input){
         color_code_boxs[i].classList.remove("color1_daymode");
       }
       h1.classList.remove("color2_daymode");
-      index_main.classList.remove("color2_daymode");
+      indexs = document.getElementsByClassName("index")
+      indexs[0].classList.remove("color2_daymode");
       var color_navbar = document.getElementsByClassName("navbar");
       var test = document.getElementsByClassName("navbar_button");
       for (var i = 0; i < color_navbar.length; i++) {
@@ -368,7 +369,8 @@ function mode_selector(input){
       code_boxs[i].classList.add("color1_daymode");
       }
       h1.classList.add("color2_daymode");
-      index_main.classList.add("color2_daymode");
+      indexs = document.getElementsByClassName("index")
+      indexs[0].classList.add("color2_daymode");
       var test = document.getElementsByClassName("navbar_button");
       var color_navbar = document.getElementsByClassName("navbar");
       for (var i = 0; i < color_navbar.length; i++) {

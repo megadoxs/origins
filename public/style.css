@@ -6,6 +6,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 h1 {
@@ -13,6 +14,13 @@ h1 {
     padding-bottom: 10px;
     text-align: center;
     background-color: #6D6F70;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 video {
@@ -652,4 +660,42 @@ footer {
 
 .nav_button_night_hover{
     background-color: #2b2d2e !important;
+}
+
+/*page spefict css */
+
+#my_origins_main {
+    background-color: #414243;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    display: flex;
+    max-height: 100vh;
+    flex: 1;
+}
+
+#my_origins_main > div {
+    background-color: #4D4F50;
+    width: 98%;
+    border-radius: 10px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#my_origins_main > div > div {
+    width: 95%
+}
+
+#my_origins_main ul {
+    padding-left: 20px;
+}
+
+#my_origins_main h2 {
+    padding-top: 20px;
+}
+
+#my_origins_main a {
+    text-decoration: none;
+    color: black;
 }
