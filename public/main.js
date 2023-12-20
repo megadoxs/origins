@@ -140,6 +140,10 @@ close.onclick = function() {
     mode_display_set();
 }
 
+//nerd checkbox (show by default the code of every page)
+
+
+
 // window click detection
 
 window.onclick = function(event) {
@@ -204,6 +208,29 @@ function rotate_icon() {
 }
 
 // custom select menu
+var nerd = Boolean(localStorage.getItem('nerd')) || false;
+
+function onLoad_nerd_set(){
+  console.log(localStorage.getItem('nerd'));
+  if (nerd) {
+    nerd_mode.checked = true;
+  }
+  else {
+    nerd_mode.checked = false;
+  }
+}
+
+function nerd_set(){
+  if (nerd) {
+    nerd = false;
+    localStorage.setItem('nerd',  'false');
+  }
+  else {
+    nerd = true;
+    localStorage.setItem('nerd',  'true');
+  }
+}
+
 
 // 1- language selector 
 

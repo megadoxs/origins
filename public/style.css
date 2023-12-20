@@ -23,6 +23,10 @@ body {
     min-height: 100vh;
 }
 
+button {
+    cursor: pointer;
+}
+
 main {
     flex: 1;
 }
@@ -85,7 +89,6 @@ header > nav img {
 header > nav > div:nth-child(2) > button {
     background-color: #333536;
     border: 0;
-    cursor: pointer;
 }
 
 header > nav > div:nth-child(2) {
@@ -111,7 +114,6 @@ header > nav > div:nth-child(1) > ul > li > button {
     background-color: #333536;
     border-style: none;
     padding: 20px;
-    cursor: pointer;
     font-weight: bold;
 }
 
@@ -178,7 +180,6 @@ header > nav > div:nth-child(1) > ul > li > button {
     border-style: none;
     background-color: #333536;
     color: black;
-    cursor: pointer;
     font-weight: bold;
 }
 
@@ -532,11 +533,6 @@ h4 a {
     color:white !important;
 }
 
-.custom_select > div {
-    position: relative;
-    display: inline-block;
-}
-
 .custom_select > div > div {
     position: absolute;
     z-index: 1;
@@ -587,11 +583,6 @@ h4 a {
 .custom_select > div > button {
     display: flex;
     justify-content: space-between;
-}
-
-#mode_select button, 
-#lang_select button {
-    cursor: pointer;
 }
 
 #mode_select > div,
@@ -762,4 +753,8 @@ footer {
 
 .origin_name {
     font-size: xx-large;
+}
+
+.margl5 {
+    margin-left: 5px;
 }

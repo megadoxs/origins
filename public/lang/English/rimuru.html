@@ -7,7 +7,7 @@
     <link href="../../style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../../images/origins.png">
   </head>
-  <body onload = "lang_selector(lang), mode_selector(mode)">
+  <body onload = "lang_selector(lang), mode_selector(mode), onLoadScrollToTarget(), onLoad_nerd_set()">
     <header id = "index_header">
       <h1 id = "h1">Megadoxs's Origins</h1>
       <nav id = "navbar" class = "navbar">
@@ -81,6 +81,10 @@
                   <button id = "mode_selector_1" onclick="mode_selector(1)" onmouseenter="mode_highlight_del()"><img id = "mode_selector_logo_1" src = "../../images/sun.png"><p id = "mode_selector_1_text">Day Mode</p></button>
                 </div>
               </div>
+            </div>
+            <div class = custom_select>
+              <label for="nerd">Enable nerd mode</label><br>
+              <input type="checkbox" id = "nerd_mode" name="nerd" onClick="nerd_set()">
             </div>
           </div>
         </div>
