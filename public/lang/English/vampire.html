@@ -7,7 +7,7 @@
     <link href="../../style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../../images/origins.png">
   </head>
-  <body onload = "lang_selector(lang), mode_selector(mode), onLoadScrollToTarget()">
+  <body onload = "lang_selector(lang), mode_selector(mode), onLoadScrollToTarget(), onLoad_nerd_set(), nerd_code()">
     <header id = "index_header">
       <h1 id = "h1">Megadoxs's Origins</h1>
       <nav id = "navbar" class = "navbar">
@@ -43,11 +43,11 @@
       <div>
         <button class = "navbar" id = "settings"><img id = "settings_icon" src = "../../images/setting.png"></button>
         <div id="settings_modal">
-          <div id="modal_content" class = "color4">
+          <div id="modal_content" class = "color3">
             <span class="close">&times;</span>
             <h2>Settings</h2>
             <div id="lang_select" class = "custom_select">
-              <label for = "language">Select your language:</label>
+              <p>Select your language:</p>
               <div id = "lang_selector_menu">
                 <button onclick="open_lang_selector()">
                   <div>
@@ -65,7 +65,7 @@
               </div>
             </div>
             <div id="mode_select" class = "custom_select">
-              <label for = "mode_selecter">Select your mode:</label>
+              <p>Select your mode:</p>
               <div id = "mode_selector_menu">
                 <button onclick="open_mode_selector()">
                   <div>
@@ -82,16 +82,20 @@
                 </div>
               </div>
             </div>
+            <div class = custom_select>
+              <p>Enable nerd mode</p>
+              <input type="checkbox" id = "nerd_mode" class = "margl5" name="nerd" onClick="nerd_set()">
+            </div>
           </div>
         </div>
       </div>
       </nav>
     </header>
     <main id = "rimuru_main" class = "index">
-      <div class = "color4">
+      <div class = "color3">
         <h2 class = "origin_name">Vampire</h2>
       </div>
-      <div class = "color4">
+      <div class = "color3">
         <div class = "solo_overview">
           <h3>Quick Overview</h3>
           <div>
@@ -131,9 +135,55 @@
           </div>
         </div>
       </div>
-      <div class = "color4">
+      <div class = "color3">
         <div class = "origin_powers">
           <h3>Powers</h3>
+            <div id = "blood_bar" class = "power color4">
+              <h4>Blood Bar</h4>
+              <div>
+                <p class = "justify_text">Blood Bar is a simple power that is meant to replace the food bar a player normaly have. When the bar is over 90% full you gain resistance and strengh and when it is below 10% gain weaknes and nosea. Apart from that, the blood bar does nothing much more then store the blood that can be gain amd used other powers.</p>
+                <div>
+                  <img src = "../../images/blood_bar.png">
+                </div>
+              </div>
+              <div>
+                <a id = "blood_bar_show" onClick = "show_code(0)">Show Code</a>
+                <div id = "blood_bar_code" class = "displayable_code">
+                  <div class = large_code_box>
+                    <div>
+                      <div>
+                        <p>
+                          {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"name":"Sun Burn",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"description":"burns you when you stand under the sun",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"hidden": false <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                          }
+                        </p>
+                      </div>
+                      <div class = "download_code">
+                        <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
+                      </div>
+                    </div>
+                  </div>
+                  <a></a>
+                </div>
+                <a id = "blood_bar_hide" onClick = "hide_code(0)" class = "hide_button">Hide Code</a>
+              </div>
+            </div>
+            <div>
+              <h4></h4>
+
+            </div>
         </div>
       </div>
     </main>

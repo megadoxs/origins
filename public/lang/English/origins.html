@@ -7,7 +7,7 @@
     <link href="../../style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../../images/origins.png">
   </head>
-  <body onload = "lang_selector(lang), mode_selector(mode)">
+  <body onload = "lang_selector(lang), mode_selector(mode), onLoad_nerd_set()">
     <header id = "index_header">
       <h1 id = "h1">Megadoxs's Origins</h1>
       <nav id = "navbar" class = "navbar">
@@ -43,11 +43,11 @@
       <div>
         <button class = "navbar" id = "settings"><img id = "settings_icon" src = "../../images/setting.png"></button>
         <div id="settings_modal">
-          <div id="modal_content" class = "color4">
+          <div id="modal_content" class = "color3">
             <span class="close">&times;</span>
             <h2>Settings</h2>
             <div id="lang_select" class = "custom_select">
-              <label for = "language">Select your language:</label>
+              <p>Select your language:</p>
               <div id = "lang_selector_menu">
                 <button onclick="open_lang_selector()">
                   <div>
@@ -65,7 +65,7 @@
               </div>
             </div>
             <div id="mode_select" class = "custom_select">
-              <label for = "mode_selecter">Select your mode:</label>
+              <p>Select your mode:</p>
               <div id = "mode_selector_menu">
                 <button onclick="open_mode_selector()">
                   <div>
@@ -82,29 +82,33 @@
                 </div>
               </div>
             </div>
+            <div class = custom_select>
+              <p>Enable nerd mode</p>
+              <input type="checkbox" id = "nerd_mode" class = "margl5" name="nerd" onClick="nerd_set()">
+            </div>
           </div>
         </div>
       </div>
       </nav>
     </header>
     <main id = "my_origins_main" class = "index">
-      <div class = "color4">
+      <div class = "color3">
         <div>
           <h2>Origins</h2>
-          <p>Here is a list of all the origins ands their powers. Some can still be not done or at their final version</p>
+          <p>Here is a list of all the origins ands their powers. Some can still not be done or in their final version.</p>
           <ul>
             <li>
               <h3><a href = "./vampire.html">Vampire</a></h3>
               <div>
-                <ul>
-                  <li><a onclick="augmentedScrollToTarget('[Power Name id]'); location.href = './vampire.html'">[Power Name]</a></li>
+                <ul class = "pointer_child">
+                  <li><a onclick="augmentedScrollToTarget('blood_bar'); location.href = './vampire.html'">Blood Bar</a></li>
                 </ul>
               </div>
             </li>
             <li>
               <h3><a href = "./werewolf.html">Werewolf</a></h3>
               <div>
-                <ul>
+                <ul class = "pointer_child">
                   <li><a onclick="augmentedScrollToTarget('[Power Name id]'); location.href = './werewolf.html'">[Power Name]</a></li>
                 </ul>
               </div>
@@ -112,7 +116,7 @@
             <li>
               <h3><a href = "./rimuru.html">Rimuru</a></h3>
               <div>
-                <ul>
+                <ul class = "pointer_child">
                   <li><a onclick="augmentedScrollToTarget('[Power Name id]'); location.href = './rimuru.html'">[Power Name]</a></li>
                 </ul>
               </div>

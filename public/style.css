@@ -16,14 +16,13 @@ h1 {
     background-color: #6D6F70;
 }
 
-
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-button {
+button, a {
     cursor: pointer;
 }
 
@@ -256,7 +255,7 @@ header > nav > div:nth-child(1) > ul > li > button {
 
 h3 {
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 /* comment exemple*/
@@ -757,4 +756,102 @@ footer {
 
 .margl5 {
     margin-left: 5px;
+}
+
+.origin_powers {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.origin_powers h3 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.power {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #6D6F70;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    gap:20px;
+    animation: tAnimation 2s ease-in-out;
+} 
+
+.power > div:first-of-type {
+    display: flex;
+    gap: 10%
+}
+
+.power > div:last-of-type {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.power > div:last-of-type a {
+    color:blue;
+    align-self: flex-end;
+}
+
+
+.power > div:first-of-type > *{
+    width: 45%;
+}
+
+.power > * {
+    width: 95%;
+    align-self: center;
+}
+
+.power h4 {
+    margin-bottom: 15px;
+}
+
+.large_code_box {
+    background-color: #6D6F70;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+}
+
+.large_code_box > div{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.large_code_box > div > div:nth-child(1) {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.hide_button {
+    display: none;
+}
+
+/* not working */
+
+.displayable_code {
+    display: none;
+    animation: expandAnimation 2s ease-in-out;
+}
+
+.displayable_code * {
+    animation: expandAnimation 2s ease-in-out;
+}
+
+@keyframes expandAnimation {
+    from {
+        height: 0px;
+    }
+    to {
+        height: 100%;
+    }
 }

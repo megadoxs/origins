@@ -7,7 +7,7 @@
     <link href="../../style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../../images/origins.png">
   </head>
-  <body onload = "lang_selector(lang), mode_selector(mode), onLoadScrollToTarget()">
+  <body onload = "lang_selector(lang), mode_selector(mode), onLoadScrollToTarget(), onLoad_nerd_set()">
     <header id = "index_header">
       <h1 id = "h1">Megadoxs's Origins</h1>
       <nav id = "navbar" class = "navbar">
@@ -47,7 +47,7 @@
             <span class="close">&times;</span>
             <h2>Settings</h2>
             <div id="lang_select" class = "custom_select">
-              <label for = "language">Select your language:</label>
+              <p>Select your language:</p>
               <div id = "lang_selector_menu">
                 <button onclick="open_lang_selector()">
                   <div>
@@ -65,7 +65,7 @@
               </div>
             </div>
             <div id="mode_select" class = "custom_select">
-              <label for = "mode_selecter">Select your mode:</label>
+              <p>Select your mode:</p>
               <div id = "mode_selector_menu">
                 <button onclick="open_mode_selector()">
                   <div>
@@ -81,6 +81,10 @@
                   <button id = "mode_selector_1" onclick="mode_selector(1)" onmouseenter="mode_highlight_del()"><img id = "mode_selector_logo_1" src = "../../images/sun.png"><p id = "mode_selector_1_text">Day Mode</p></button>
                 </div>
               </div>
+            </div>
+            <div class = custom_select>
+              <p>Enable nerd mode</p>
+              <input type="checkbox" id = "nerd_mode" class = "margl5" name="nerd" onClick="nerd_set()">
             </div>
           </div>
         </div>
