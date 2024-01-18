@@ -430,33 +430,49 @@ function mode_selector(input){
 
 // show code
 
-function nerd_code(){
+function nerd_code(){ //will make use of array eventually
   if(nerd === "true"){
-    blood_bar_code.style.display = "block";
+    blood_bar_code.classList.add("displayed_code");
     blood_bar_show.style.display = "none"
     blood_bar_hide.style.display = "block";
   } 
-  else {
-    blood_bar_code.style.display = "none";
+  else {
+    blood_bar_code.classList.remove("displayed_code");
+    blood_bar_show.style.marginTop = "20px";
     blood_bar_show.style.display = "block"
     blood_bar_hide.style.display = "none";
+    blood_bar_code.addEventListener("transitionend", function(){ blood_bar_show.style.marginTop = "" });
   }
 }
 
-function show_code(code_box) {
+function of_code(code_box, of) {
   switch (code_box){
     case 0:
-      blood_bar_code.style.display = "block";
-      blood_bar_show.style.display = "none"
-      blood_bar_hide.style.display = "block";
+      var codeDiv = blood_bar
+      break;
+    case 1:
+      var codeDiv = "some_other_power_name"
+      break;
+    case 2:
+      var codeDiv = "some_other_power_name"
+      break;
   }
-}
 
-function hide_code(code_box) {
-  switch (code_box){
-    case 0:
-      blood_bar_code.style.display = "none";
-      blood_bar_show.style.display = "block"
-      blood_bar_hide.style.display = "none";
+  codeDivShow = document.getElementById(codeDiv.id + "_show")
+  codeDivHide = document.getElementById(codeDiv.id + "_hide")
+  codeDiv = document.getElementById(codeDiv.id + "_code")
+  
+  if (of == 0){
+    codeDiv.classList.toggle("displayed_code");
+    codeDivShow.style.marginTop = "20px";
+    codeDivShow.style.display = "block"
+    codeDivHide.style.display = "none";
+    codeDiv.addEventListener("transitionend", function(){ codeDivShow.style.marginTop = "" });
   }
+  else {
+    codeDiv.classList.toggle("displayed_code");
+    codeDivShow.style.display = "none"
+    codeDivHide.style.display = "block";
+  }
+  
 }

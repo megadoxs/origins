@@ -777,8 +777,7 @@ footer {
     border-radius: 10px;
     padding-bottom: 20px;
     padding-top: 20px;
-    gap:20px;
-    animation: tAnimation 2s ease-in-out;
+    transition: height 2s ease-in-out;
 } 
 
 .power > div:first-of-type {
@@ -792,12 +791,6 @@ footer {
     gap:20px;
 }
 
-.power > div:last-of-type a {
-    color:blue;
-    align-self: flex-end;
-}
-
-
 .power > div:first-of-type > *{
     width: 45%;
 }
@@ -805,6 +798,11 @@ footer {
 .power > * {
     width: 95%;
     align-self: center;
+    margin-bottom: 20px;
+}
+
+.power > a {
+    text-align: end;
 }
 
 .power h4 {
@@ -839,19 +837,22 @@ footer {
 /* not working */
 
 .displayable_code {
-    display: none;
-    animation: expandAnimation 2s ease-in-out;
+    transition: height 2s linear;
+    height: 0px;
+    overflow: hidden;
+    margin-bottom: 0;
 }
 
-.displayable_code * {
-    animation: expandAnimation 2s ease-in-out;
+.displayed_code {
+    height: 337px; /*need some way to not have to hard code that value*/
+    margin-bottom: 20px;
 }
 
-@keyframes expandAnimation {
-    from {
-        height: 0px;
-    }
-    to {
-        height: 100%;
-    }
+.show_button, .hide_button {
+    margin-bottom: 0;
+    color:blue;
+}
+
+.no_transition {
+    transition: none !important;
 }
