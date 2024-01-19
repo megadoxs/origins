@@ -154,17 +154,16 @@ function onLoad_nerd_set(){
   }
 }
 
-function nerd_set(){
+function nerd_set(page){
   if (nerd === "true") {
     nerd = "false";
     localStorage.setItem('nerd',  'false');
-    nerd_code()
   }
   else {
     nerd = "true";
     localStorage.setItem('nerd',  'true');
-    nerd_code()
   }
+  if (typeof page !== 'undefined') nerd_code(page);
 }
 
 // window click detection
@@ -430,18 +429,35 @@ function mode_selector(input){
 
 // show code
 
-function nerd_code(){ //will make use of array eventually
-  if(nerd === "true"){
-    blood_bar_code.classList.add("displayed_code");
-    blood_bar_show.style.display = "none"
-    blood_bar_hide.style.display = "block";
-  } 
-  else {
-    blood_bar_code.classList.remove("displayed_code");
-    blood_bar_show.style.marginTop = "20px";
-    blood_bar_show.style.display = "block"
-    blood_bar_hide.style.display = "none";
-    blood_bar_code.addEventListener("transitionend", function(){ blood_bar_show.style.marginTop = "" });
+function nerd_code(page){ //page 0 = vampire, page 1 = werewold, page 2 = rimuru
+  switch (page){ //add each power id (variable not a string) to the array of the page
+    case 0: 
+      var codeDivArray = [blood_bar]
+      break;
+    case 1:
+      var codeDivArray = ["some_other_power_id"] 
+      break;
+    case 2:
+      var codeDivArray = ["some_other_power_id"]
+      break;
+  }
+  for (let i = 0; i < codeDivArray.length; i++ ){  
+    codeDivShow = document.getElementById(codeDivArray[i].id + "_show")
+    codeDivHide = document.getElementById(codeDivArray[i].id + "_hide")
+    codeDiv = document.getElementById(codeDivArray[i].id + "_code")
+
+    if(nerd === "true"){
+      codeDiv.classList.add("displayed_code");
+      codeDivShow.style.display = "none"
+      codeDivHide.style.display = "block";
+    } 
+    else {
+      codeDiv.classList.remove("displayed_code");
+      codeDivShow.style.marginTop = "20px";
+      codeDivShow.style.display = "block"
+      codeDivHide.style.display = "none";
+      codeDiv.addEventListener("transitionend", function(){ codeDivShow.style.marginTop = "" });
+    }
   }
 }
 
@@ -451,10 +467,10 @@ function of_code(code_box, of) {
       var codeDiv = blood_bar
       break;
     case 1:
-      var codeDiv = "some_other_power_name"
+      var codeDiv = "some_other_power_id"
       break;
     case 2:
-      var codeDiv = "some_other_power_name"
+      var codeDiv = "some_other_power_id"
       break;
   }
 
