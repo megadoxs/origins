@@ -461,22 +461,22 @@ function nerd_code(page){ //page 0 = vampire, page 1 = werewold, page 2 = rimuru
   }
 }
 
-function of_code(code_box, of) {
-  switch (code_box){
+function of_code(page, code_box, of) { // code_box = number starting at 0 of the box in that page, of = on(show) or off(hide), 0 = show, 1 = hide
+  switch (page){ // vampire page 0, werewold page 1, rimuru page 2,
     case 0:
-      var codeDiv = blood_bar
+      var codeDivArray = [blood_bar]
       break;
     case 1:
-      var codeDiv = "some_other_power_id"
+      var codeDivArray = ["some_other_power_id"] // power id (variable) not a string
       break;
     case 2:
-      var codeDiv = "some_other_power_id"
+      var codeDivArray = ["some_other_power_id"]
       break;
   }
 
-  codeDivShow = document.getElementById(codeDiv.id + "_show")
-  codeDivHide = document.getElementById(codeDiv.id + "_hide")
-  codeDiv = document.getElementById(codeDiv.id + "_code")
+  codeDivShow = document.getElementById(codeDivArray[code_box].id + "_show")
+  codeDivHide = document.getElementById(codeDivArray[code_box].id + "_hide")
+  codeDiv = document.getElementById(codeDivArray[code_box].id + "_code")
   
   if (of == 0){
     codeDiv.classList.toggle("displayed_code");
@@ -490,5 +490,4 @@ function of_code(code_box, of) {
     codeDivShow.style.display = "none"
     codeDivHide.style.display = "block";
   }
-  
 }
