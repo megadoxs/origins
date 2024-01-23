@@ -432,29 +432,31 @@ function mode_selector(input){
 function nerd_code(page){ //page 0 = vampire, page 1 = werewold, page 2 = rimuru
   switch (page){ //add each power id (variable not a string) to the array of the page
     case 0: 
-      var codeDivArray = [blood_bar]
+      var codeDivArray = [blood_bar];
       break;
     case 1:
-      var codeDivArray = ["some_other_power_id"] 
+      var codeDivArray = ["some_other_power_id"];
       break;
     case 2:
-      var codeDivArray = ["some_other_power_id"]
+      var codeDivArray = ["some_other_power_id"];
       break;
   }
   for (let i = 0; i < codeDivArray.length; i++ ){  
-    codeDivShow = document.getElementById(codeDivArray[i].id + "_show")
-    codeDivHide = document.getElementById(codeDivArray[i].id + "_hide")
-    codeDiv = document.getElementById(codeDivArray[i].id + "_code")
+    codeDivShow = document.getElementById(codeDivArray[i].id + "_show");
+    codeDivHide = document.getElementById(codeDivArray[i].id + "_hide");
+    codeDiv = document.getElementById(codeDivArray[i].id + "_code");
 
     if(nerd === "true"){
-      codeDiv.classList.add("displayed_code");
-      codeDivShow.style.display = "none"
+      codeDiv.style.height = codeDiv.scrollHeight + "px";
+      codeDiv.style.marginBottom = "20px";
+      codeDivShow.style.display = "none";
       codeDivHide.style.display = "block";
     } 
     else {
-      codeDiv.classList.remove("displayed_code");
+      codeDiv.style.height = "0px"
+      codeDiv.style.marginBottom = "0px";
       codeDivShow.style.marginTop = "20px";
-      codeDivShow.style.display = "block"
+      codeDivShow.style.display = "block";
       codeDivHide.style.display = "none";
       codeDiv.addEventListener("transitionend", function(){ codeDivShow.style.marginTop = "" });
     }
@@ -464,30 +466,32 @@ function nerd_code(page){ //page 0 = vampire, page 1 = werewold, page 2 = rimuru
 function of_code(page, code_box, of) { // code_box = number starting at 0 of the box in that page, of = on(show) or off(hide), 0 = show, 1 = hide
   switch (page){ // vampire page 0, werewold page 1, rimuru page 2,
     case 0:
-      var codeDivArray = [blood_bar]
+      var codeDivArray = [blood_bar];
       break;
     case 1:
-      var codeDivArray = ["some_other_power_id"] // power id (variable) not a string
+      var codeDivArray = ["some_other_power_id"]; // power id (variable) not a string
       break;
     case 2:
-      var codeDivArray = ["some_other_power_id"]
+      var codeDivArray = ["some_other_power_id"];
       break;
   }
 
-  codeDivShow = document.getElementById(codeDivArray[code_box].id + "_show")
-  codeDivHide = document.getElementById(codeDivArray[code_box].id + "_hide")
-  codeDiv = document.getElementById(codeDivArray[code_box].id + "_code")
+  codeDivShow = document.getElementById(codeDivArray[code_box].id + "_show");
+  codeDivHide = document.getElementById(codeDivArray[code_box].id + "_hide");
+  codeDiv = document.getElementById(codeDivArray[code_box].id + "_code");
   
   if (of == 0){
-    codeDiv.classList.toggle("displayed_code");
+    codeDiv.style.height = "0px"
+    codeDiv.style.marginBottom = "0px";
     codeDivShow.style.marginTop = "20px";
-    codeDivShow.style.display = "block"
+    codeDivShow.style.display = "block";
     codeDivHide.style.display = "none";
     codeDiv.addEventListener("transitionend", function(){ codeDivShow.style.marginTop = "" });
   }
   else {
-    codeDiv.classList.toggle("displayed_code");
-    codeDivShow.style.display = "none"
+    codeDiv.style.height = codeDiv.scrollHeight + "px";
+    codeDiv.style.marginBottom = "20px";
+    codeDivShow.style.display = "none";
     codeDivHide.style.display = "block";
   }
 }

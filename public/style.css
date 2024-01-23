@@ -843,16 +843,11 @@ footer {
     margin-bottom: 0;
 }
 
-.displayed_code {
-    height: 337px; /*need some way to not have to hard code that value*/
-    margin-bottom: 20px;
-}
-
 .show_button, .hide_button {
     margin-bottom: 0;
     color:blue;
 }
 
-.no_transition {
+.no_transition { /* currently does nothing might add later on*/
     transition: none !important;
 }
