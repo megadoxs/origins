@@ -516,7 +516,7 @@ async function fetch_json_files(){
   for(let i = 0; i < pages.length; i++ ){
     for(let j = 0; j < codeDivArray[i].length; j++ ){
       var power_json = document.getElementById(codeDivArray[i][j].id + "_json");
-      await fetch('/downloads/' + pages[i] + "/" + codeDivArray[i][j].id + ".json")
+      await fetch('../../downloads/' + pages[i] + "/" + codeDivArray[i][j].id + ".json")
       .then( async response => await response.json())
       .then(data => {
         power_json.textContent = JSON.stringify(data, null, 3);
