@@ -1,0 +1,68 @@
+{
+    "type": "origins:multiple",
+    "blood_absorb": {
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:blood_bar",
+                    "change": 20
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vampire:blood_absorb",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "target_condition": {
+            "type": "origins:in_tag",
+            "tag": "vampire:blood"
+        },
+        "damage_condition": {
+            "type": "origins:projectile",
+            "inverted": true
+        },
+        "cooldown": 25,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 22,
+            "should_render": true
+        }
+    },
+    "kill_blood_absorb": {
+        "type": "origins:self_action_on_kill",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:blood_bar",
+                    "change": 40
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vampire:blood_absorb",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "target_condition": {
+            "type": "origins:in_tag",
+            "tag": "vampire:blood"
+        },
+        "damage_condition": {
+            "type": "origins:projectile",
+            "inverted": true
+        },
+        "cooldown": 25,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 22,
+            "should_render": false
+        },
+        "hidden": true
+    }
+}

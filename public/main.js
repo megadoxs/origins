@@ -4,12 +4,11 @@ window.onscroll = function() {Stickynav()};
 var sticky = navbar.offsetTop;  
 
 function Stickynav() {
-
-    if (window.scrollY >= sticky) {
-        navbar.classList.add("sticky")
-    } else {
-        navbar.classList.remove("sticky");
-    }
+  if (window.scrollY >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
 }
 
 function augmentedScrollToTarget(targetId) {
@@ -24,15 +23,15 @@ function onLoadScrollToTarget(){
   }
 }
 
-function scrollToTarget(targetId) {
-    var targetDiv = document.getElementById(targetId);
-    var navbarHeight = navbar.offsetHeight;
-    var targetScrollPosition = targetDiv.offsetTop - navbarHeight;
+async function scrollToTarget(targetId) {
+  var targetDiv = document.getElementById(targetId);
+  var navbarHeight = navbar.offsetHeight;
+  var targetScrollPosition = targetDiv.offsetTop - navbarHeight;
 
     window.scrollTo({
-      top: targetScrollPosition,
-      behavior: 'smooth'
-    });
+    top: targetScrollPosition,
+    behavior: 'smooth'
+  });
 }
 
 // drop downs
@@ -163,7 +162,7 @@ function nerd_set(page){
     nerd = "true";
     localStorage.setItem('nerd',  'true');
   }
-  if (typeof page !== 'undefined') nerd_code(page);
+  if (typeof page != 'undefined') nerd_show_all(page);
 }
 
 // window click detection
@@ -429,22 +428,21 @@ function mode_selector(input){
 
 // show code
 
-function nerd_code(page){ //page 0 = vampire, page 1 = werewold, page 2 = rimuru
-  switch (page){ //add each power id (variable not a string) to the array of the page
-    case 0: 
-      var codeDivArray = [blood_bar];
-      break;
-    case 1:
-      var codeDivArray = ["some_other_power_id"];
-      break;
-    case 2:
-      var codeDivArray = ["some_other_power_id"];
-      break;
-  }
-  for (let i = 0; i < codeDivArray.length; i++ ){  
-    codeDivShow = document.getElementById(codeDivArray[i].id + "_show");
-    codeDivHide = document.getElementById(codeDivArray[i].id + "_hide");
-    codeDiv = document.getElementById(codeDivArray[i].id + "_code");
+const transition_speed = 200;
+
+const codeDivArray = [
+  [blood_born, blood_sucker, vampiric_attributes, immortal, wind_cloack], 
+  ["some_other_power_id"],
+  ["some_other_power_id"]
+];
+
+async function onLoad_nerd_show(page){
+  await fetch_json_files();
+  for (let i = 0; i < codeDivArray[page].length; i++ ){  
+    codeDivShow = document.getElementById(codeDivArray[page][i].id + "_show");
+    codeDivHide = document.getElementById(codeDivArray[page][i].id + "_hide");
+    codeDiv = document.getElementById(codeDivArray[page][i].id + "_code");
+    codeDiv.style.transition = "none"
 
     if(nerd === "true"){
       codeDiv.style.height = codeDiv.scrollHeight + "px";
@@ -461,37 +459,70 @@ function nerd_code(page){ //page 0 = vampire, page 1 = werewold, page 2 = rimuru
       codeDiv.addEventListener("transitionend", function(){ codeDivShow.style.marginTop = "" });
     }
   }
+  onLoadScrollToTarget();
 }
 
-function of_code(page, code_box, of) { // code_box = number starting at 0 of the box in that page, of = on(show) or off(hide), 0 = show, 1 = hide
-  switch (page){ // vampire page 0, werewold page 1, rimuru page 2,
-    case 0:
-      var codeDivArray = [blood_bar];
-      break;
-    case 1:
-      var codeDivArray = ["some_other_power_id"]; // power id (variable) not a string
-      break;
-    case 2:
-      var codeDivArray = ["some_other_power_id"];
-      break;
-  }
+function nerd_show_all(page){
+  for (let i = 0; i < codeDivArray[page].length; i++ ){  
+    codeDivShow = document.getElementById(codeDivArray[page][i].id + "_show");
+    codeDivHide = document.getElementById(codeDivArray[page][i].id + "_hide");
+    codeDiv = document.getElementById(codeDivArray[page][i].id + "_code");
+    codeDiv.style.transition = "height " + codeDiv.scrollHeight/transition_speed + "s linear"
 
-  codeDivShow = document.getElementById(codeDivArray[code_box].id + "_show");
-  codeDivHide = document.getElementById(codeDivArray[code_box].id + "_hide");
-  codeDiv = document.getElementById(codeDivArray[code_box].id + "_code");
-  
-  if (of == 0){
-    codeDiv.style.height = "0px"
-    codeDiv.style.marginBottom = "0px";
-    codeDivShow.style.marginTop = "20px";
-    codeDivShow.style.display = "block";
-    codeDivHide.style.display = "none";
-    codeDiv.addEventListener("transitionend", function(){ codeDivShow.style.marginTop = "" });
+    if(nerd === "true"){
+      codeDiv.style.height = codeDiv.scrollHeight + "px";
+      codeDiv.style.marginBottom = "20px";
+      codeDivShow.style.display = "none";
+      codeDivHide.style.display = "block";
+    } 
+    else {
+      codeDiv.style.height = "0px"
+      codeDiv.style.marginBottom = "0px";
+      codeDivShow.style.marginTop = "20px";
+      codeDivShow.style.display = "block";
+      codeDivHide.style.display = "none";
+      codeDiv.addEventListener("transitionend", function(){ codeDivShow.style.marginTop = ""}); //not working?!?
+    }
   }
-  else {
+}
+
+function nerd_show(page, code_box, of) { // code_box = number starting at 0 of the box in that page, of = on(show) or off(hide), 0 = show, 1 = hide
+  codeDivShow = document.getElementById(codeDivArray[page][code_box].id + "_show");
+  codeDivHide = document.getElementById(codeDivArray[page][code_box].id + "_hide");
+  codeDiv = document.getElementById(codeDivArray[page][code_box].id + "_code");
+  codeDiv.style.transition = "height " + codeDiv.scrollHeight/transition_speed + "s linear"
+  
+  if (of == 1){
     codeDiv.style.height = codeDiv.scrollHeight + "px";
     codeDiv.style.marginBottom = "20px";
     codeDivShow.style.display = "none";
     codeDivHide.style.display = "block";
   }
+  else {
+    codeDiv.style.height = "0px"
+    codeDiv.style.marginBottom = "0px";
+    codeDivShow.style.marginTop = "20px";
+    codeDivShow.style.display = "block";
+    codeDivHide.style.display = "none";
+    codeDiv.addEventListener("transitionend", function(){ codeDivShow.style.marginTop = ""}); // not working?!?
+  }
 }
+
+//code fetch
+
+const pages = ["vampire"]; // "werewolf", "rimuru" aren't implemented yet, maybe add this array to the power array
+
+async function fetch_json_files(){
+  for(let i = 0; i < pages.length; i++ ){
+    for(let j = 0; j < codeDivArray[i].length; j++ ){
+      var power_json = document.getElementById(codeDivArray[i][j].id + "_json");
+      await fetch('/downloads/' + pages[i] + "/" + codeDivArray[i][j].id + ".json")
+      .then( async response => await response.json())
+      .then(data => {
+        power_json.textContent = JSON.stringify(data, null, 3);
+      })
+    }
+  }
+}
+
+fetch_json_files()

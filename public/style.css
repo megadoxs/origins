@@ -26,6 +26,11 @@ button, a {
     cursor: pointer;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 main {
     flex: 1;
 }
@@ -362,20 +367,11 @@ h3 {
     display: flex;
 }
 
-.download_code a {
-    text-decoration: none;
-}
-
 .download_code  img{
     height: 15px;
     width: auto;
     padding-right: 5px;
     display:block;
-}
-
-h4 a {
-    text-decoration: none;
-    color: black;
 }
 
 #custom_origins h4 {
@@ -423,6 +419,8 @@ h4 a {
 
 #minecraft_datapacks > div:nth-child(2) a {
     float: right;
+    text-decoration: underline;
+    color: blue;
 }
 
 #origins_overview > div:not(:nth-child(1)) > div {
@@ -679,17 +677,8 @@ footer {
     width: 95%
 }
 
-#my_origins_main ul {
-    padding-left: 20px;
-}
-
 #my_origins_main h2 {
     padding-top: 20px;
-}
-
-#my_origins_main a {
-    text-decoration: none;
-    color: black;
 }
 
 #rimuru_main {
@@ -834,10 +823,7 @@ footer {
     display: none;
 }
 
-/* not working */
-
 .displayable_code {
-    transition: height 2s linear;
     height: 0px;
     overflow: hidden;
     margin-bottom: 0;
@@ -848,6 +834,8 @@ footer {
     color:blue;
 }
 
-.no_transition { /* currently does nothing might add later on*/
-    transition: none !important;
+.power_index {
+    padding-left: 20px;
+    display: flex;
+    gap: 40px;
 }

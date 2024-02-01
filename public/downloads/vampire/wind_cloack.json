@@ -1,0 +1,72 @@
+{
+    "type": "origins:multiple",
+    "effects": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:blood_bar",
+                    "change": -4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vampire:wind_cloak",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "*:wind_cloak_toggle"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vampire:blood_bar",
+                    "comparison": ">",
+                    "compare_to": 4
+                }
+            ]
+        },
+        "interval": 8
+    },
+    "inv": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:wind_cloak_effects"
+        }
+    },
+    "sun": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "resource": "*:blood_bar",
+            "change": 3
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:exposed_to_sun"
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:wind_cloak_effects"
+                }
+            ]
+        },
+        "interval": 2
+    },
+    "toggle":{
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "key": {
+          "key": "key.origins.secondary_active"
+        }
+    }
+}

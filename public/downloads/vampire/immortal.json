@@ -1,0 +1,77 @@
+{
+    "type": "origins:multiple",
+    "true_immortality": {
+        "type": "origins:prevent_death",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:blood_bar",
+                    "change": -100
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vampire:no_dying",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:heal",
+                    "amount": 6
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "vampire:blood_bar",
+            "comparison": ">",
+            "compare_to": 100
+        }
+    },
+    "vampiric_regen":{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:heal",
+                    "amount": 1
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:blood_bar",
+                    "change": -7
+    
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "function vampire:regen",
+                    "permission_level": 4
+                }
+            ]
+    
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:exposed_to_sun",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:regen_toggle"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "vampire:blood_bar",
+                    "comparison": ">",
+                    "compare_to": 7
+                }
+            ]
+        },
+        "interval": 2
+    },
+    "vampiric_regen_toggle":{
+        "type": "origins:toggle",
+        "active_by_default": false
+    }
+}

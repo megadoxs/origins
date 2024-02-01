@@ -7,7 +7,7 @@
     <link href="../../style.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../../images/origins.png">
   </head>
-  <body onload = "lang_selector(lang), mode_selector(mode), onLoadScrollToTarget(), onLoad_nerd_set(), nerd_code(0)">
+  <body onload = "lang_selector(lang), mode_selector(mode), onLoad_nerd_set(), onLoad_nerd_show(0)">
     <header id = "index_header">
       <h1 id = "h1">Megadoxs's Origins</h1>
       <nav id = "navbar" class = "navbar">
@@ -105,7 +105,7 @@
                 <div>
                   <h4>Strengths:</h4>
                   <ul>
-                    <li>Food bar is replaced with blood bar</li>
+                    <li>Food bar is replaced with Blood Born</li>
                     <li>Can suck blood out of livig being dealing damage</li>
                     <li>Can use blood to regenerate hp</li>
                     <li>Can use blood to hide from the sun</li>
@@ -136,56 +136,134 @@
         </div>
       </div>
       <div class = "color3">
+        <div>
+          <h3>Powers Index</h3>
+          <ul class = "power_index">
+            <li><a onclick = "scrollToTarget('blood_born')">Blood Born</a></li>
+            <li><a onclick = "scrollToTarget('blood_sucker')">Blood Sucker</a></li>
+            <li><a onclick = "scrollToTarget('vampiric_attributes')">Blood Attributes</a></li>
+            <li><a onclick = "scrollToTarget('immortal')">Immortal</a></li>
+            <li><a onclick = "scrollToTarget('wind_cloack')">Wind Cloack</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class = "color3">
         <div class = "origin_powers">
           <h3>Powers</h3>
-            <div id = "blood_bar" class = "power color4">
-              <h4>Blood Bar</h4>
+            <div id = "blood_born" class = "power color4">
+              <h4>Blood Born</h4>
               <div>
-                <p class = "justify_text">Blood Bar is a simple power that is meant to replace the food bar a player normaly have. When the bar is over 90% full you gain resistance and strengh and when it is below 10% gain weaknes and nosea. Apart from that, the blood bar does nothing much more then store the blood that can be gain amd used other powers.</p>
+                <p class = "justify_text">Blood Born is a simple power that is meant to replace the food bar a player normaly have. When the bar is over 90% full you gain resistance and strengh and when it is below 10% gain weaknes and nosea. Apart from that, the Blood Born does nothing much more then store the blood that can be gain amd used other powers.</p>
                 <div>
                   <img src = "../../images/blood_bar.png">
                 </div>
               </div>
-                <div id = "blood_bar_code" class = "displayable_code">
+                <div id = "blood_born_code" class = "displayable_code">
                   <div class = large_code_box>
                     <div>
                       <div>
-                        <p>
-                          {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"type":"origins:action_over_time",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"entity_action":{<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:set_on_fire",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"duration": 5<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"condition":{<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type": "origins:exposed_to_sun"<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;},<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"interval": 200,<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"name":"Sun Burn",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"description":"burns you when you stand under the sun",<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;"hidden": false <br>
-                          }
-                        </p>
+                        <pre id = "blood_born_json"></pre>
                       </div>
                       <div class = "download_code">
-                        <a href = "downloads/examples/sun_burn.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
+                        <a href = "../../downloads/vampire/blood_born.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
                       </div>
                     </div>
                   </div>
                 </div>
-              <a id = "blood_bar_show" onClick = "of_code(0,0,1)" class = "show_button">Show Code</a>
-              <a id = "blood_bar_hide" onClick = "of_code(0,0,0)" class = "hide_button">Hide Code</a>
+              <a id = "blood_born_show" onClick = "nerd_show(0,0,1)" class = "show_button">Show Code</a>
+              <a id = "blood_born_hide" onClick = "nerd_show(0,0,0)" class = "hide_button">Hide Code</a>
             </div>
-            <div>
-              <h4></h4>
+            <div id = "blood_sucker" class = "power color4">
+              <h4>Blood Sucker</h4>
               <div>
-                
+                <p class = "justify_text">Blood Born is a simple power that is meant to replace the food bar a player normaly have. When the bar is over 90% full you gain resistance and strengh and when it is below 10% gain weaknes and nosea. Apart from that, the Blood Born does nothing much more then store the blood that can be gain amd used other powers.</p>
+                <div>
+                  <img src = "../../images/blood_bar.png">
+                </div>
               </div>
+                <div id = "blood_sucker_code" class = "displayable_code">
+                  <div class = large_code_box>
+                    <div>
+                      <div>
+                        <pre id = "blood_sucker_json"></pre>
+                      </div>
+                      <div class = "download_code">
+                        <a href = "../../downloads/vampire/blood_sucker.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <a id = "blood_sucker_show" onClick = "nerd_show(0,1,1)" class = "show_button">Show Code</a>
+              <a id = "blood_sucker_hide" onClick = "nerd_show(0,1,0)" class = "hide_button">Hide Code</a>
+            </div>
+            <div id = "vampiric_attributes" class = "power color4">
+              <h4>Vampiric Attributes</h4>
               <div>
-
+                <p class = "justify_text">Blood Born is a simple power that is meant to replace the food bar a player normaly have. When the bar is over 90% full you gain resistance and strengh and when it is below 10% gain weaknes and nosea. Apart from that, the Blood Born does nothing much more then store the blood that can be gain amd used other powers.</p>
+                <div>
+                  <img src = "../../images/blood_bar.png">
+                </div>
               </div>
-              <a></a>
-              <a></a>
+                <div id = "vampiric_attributes_code" class = "displayable_code">
+                  <div class = large_code_box>
+                    <div>
+                      <div>
+                        <pre id = "vampiric_attributes_json"></pre>
+                      </div>
+                      <div class = "download_code">
+                        <a href = "../../downloads/vampire/vampiric_attributes.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <a id = "vampiric_attributes_show" onClick = "nerd_show(0,2,1)" class = "show_button">Show Code</a>
+              <a id = "vampiric_attributes_hide" onClick = "nerd_show(0,2,0)" class = "hide_button">Hide Code</a>
+            </div>
+            <div id = "immortal" class = "power color4">
+              <h4>Immortal</h4>
+              <div>
+                <p class = "justify_text">Blood Born is a simple power that is meant to replace the food bar a player normaly have. When the bar is over 90% full you gain resistance and strengh and when it is below 10% gain weaknes and nosea. Apart from that, the Blood Born does nothing much more then store the blood that can be gain amd used other powers.</p>
+                <div>
+                  <img src = "../../images/blood_bar.png">
+                </div>
+              </div>
+                <div id = "immortal_code" class = "displayable_code">
+                  <div class = large_code_box>
+                    <div>
+                      <div>
+                        <pre id = "immortal_json"></pre>
+                      </div>
+                      <div class = "download_code">
+                        <a href = "../../downloads/vampire/immortality.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <a id = "immortal_show" onClick = "nerd_show(0,3,1)" class = "show_button">Show Code</a>
+              <a id = "immortal_hide" onClick = "nerd_show(0,3,0)" class = "hide_button">Hide Code</a>
+            </div>
+            <div id = "wind_cloack" class = "power color4">
+              <h4>wind cloack</h4>
+              <div>
+                <p class = "justify_text">Blood Born is a simple power that is meant to replace the food bar a player normaly have. When the bar is over 90% full you gain resistance and strengh and when it is below 10% gain weaknes and nosea. Apart from that, the Blood Born does nothing much more then store the blood that can be gain amd used other powers.</p>
+                <div>
+                  <img src = "../../images/blood_bar.png">
+                </div>
+              </div>
+                <div id = "wind_cloack_code" class = "displayable_code">
+                  <div class = large_code_box>
+                    <div>
+                      <div>
+                        <pre id = "wind_cloack_json"></pre>
+                      </div>
+                      <div class = "download_code">
+                        <a href = "../../downloads/vampire/wind_cloack.json" download><button><img src = "../../images/download_arrow.png">Download</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <a id = "wind_cloack_show" onClick = "nerd_show(0,4,1)" class = "show_button">Show Code</a>
+              <a id = "wind_cloack_hide" onClick = "nerd_show(0,4,0)" class = "hide_button">Hide Code</a>
             </div>
         </div>
       </div>

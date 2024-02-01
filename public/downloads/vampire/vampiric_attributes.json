@@ -1,0 +1,48 @@
+{
+    "type": "origins:multiple",
+    "regenless": {
+        "type": "origins:disable_regen"
+    },
+
+    "night_vision": {
+        "type": "origins:night_vision",
+        "strength": 0.7
+    },
+
+    "no_food": {
+        "type": "origins:prevent_item_use",
+        "item_condition":{
+            "type": "origins:food"
+        }
+    },
+
+    "not_hungry":{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:feed",
+            "food": 10,
+			"saturation":4
+        },
+        "interval": 200
+    },
+
+    "fire_damage": {
+        "type": "origins:modify_damage_dealt",
+        "condition": {
+          "type": "origins:on_fire"
+        },
+        "modifier": {
+          "name": "Additional damage while on fire",
+          "value": 3,
+          "operation": "addition"
+        }
+    },
+
+    "no_sleep":{
+        "type": "origins:prevent_sleep",
+        "set_spawn_point": true ,
+        "message": "You cannot sleep since youre a vampire"
+    },
+
+    "description":"all the attributes that makes you a vampire."
+}

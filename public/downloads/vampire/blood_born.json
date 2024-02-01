@@ -1,0 +1,129 @@
+{
+    "type":"origins:multiple",
+    "blood_bar":{
+        "type":"origins:resource",
+        "min":0,
+        "max":300,
+        "start_value":100,
+        "hud_render":{
+            "should_render":true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 5
+        }
+    },
+
+    "blood_drain":{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource":"*:blood_bar",
+            "change":-1
+        },
+        "interval": 120
+    },
+
+    "blood_bar_bonus":{
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 3,
+        "duration_per_stack": 9,
+        "effects": [
+            {
+                "effect": "minecraft:strength",
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:speed",
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:jump_boost",
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            }
+        ],
+        "condition": {
+            "type": "origins:resource",
+            "resource": "vampire:blood_bar",
+            "comparison": ">=",
+            "compare_to": 250
+        }
+    },
+
+    "blood_bar_malus":{
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 1,
+        "max_stacks": 5,
+        "duration_per_stack": 15,
+        "effects": [
+            {
+                "effect": "minecraft:slowness",
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:nausea",
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+            }
+        ],
+        "condition": {
+            "type": "origins:resource",
+            "resource": "vampire:blood_bar",
+            "comparison": "<=",
+            "compare_to": 50
+        }
+    },
+
+    "hunger_damage":{
+        "type": "origins:damage_over_time",
+        "damage": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "vampire:blood_bar",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "interval": 100,
+        "hidden": true
+    },
+
+    "blood_respawn":{
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_respawned": {
+            "type": "origins:change_resource",
+            "resource": "*:blood_bar",
+            "change": 150
+        },
+        "hidden": true
+    },
+
+    "bloody_sun":{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:blood_bar",
+            "change": -3
+        },
+        "condition": {
+            "type": "origins:exposed_to_sun"
+        },
+        "interval": 10
+    },
+
+    "name": "Blood Born",
+    "description": "The base of everything for you, your hunger, your power and also your life."
+}
