@@ -453,10 +453,8 @@ async function onLoad_nerd_show(page){
     else {
       codeDiv.style.height = "0px"
       codeDiv.style.marginBottom = "0px";
-      codeDivShow.style.marginTop = "20px";
       codeDivShow.style.display = "block";
       codeDivHide.style.display = "none";
-      codeDiv.addEventListener("transitionend", function(){ codeDivShow.style.marginTop = "" });
     }
   }
   onLoadScrollToTarget();
@@ -475,13 +473,17 @@ function nerd_show_all(page){
       codeDivShow.style.display = "none";
       codeDivHide.style.display = "block";
     } 
-    else {
+    else if (codeDiv.style.height > "0px"){
       codeDiv.style.height = "0px"
       codeDiv.style.marginBottom = "0px";
       codeDivShow.style.marginTop = "20px";
       codeDivShow.style.display = "block";
       codeDivHide.style.display = "none";
-      codeDiv.addEventListener("transitionend", function(){ codeDivShow.style.marginTop = ""}); //not working?!?
+      codeDiv.addEventListener("transitionend", function (currentCodeDivShow) {
+        return function () {
+          currentCodeDivShow.style.marginTop = "";
+        };
+      }(codeDivShow));
     }
   }
 }
@@ -504,7 +506,11 @@ function nerd_show(page, code_box, of) { // code_box = number starting at 0 of t
     codeDivShow.style.marginTop = "20px";
     codeDivShow.style.display = "block";
     codeDivHide.style.display = "none";
-    codeDiv.addEventListener("transitionend", function(){ codeDivShow.style.marginTop = ""}); // not working?!?
+    codeDiv.addEventListener("transitionend", function (currentCodeDivShow) {
+      return function () {
+        currentCodeDivShow.style.marginTop = "";
+      };
+    }(codeDivShow));
   }
 }
 
