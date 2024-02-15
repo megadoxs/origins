@@ -74,38 +74,38 @@ img {
     padding-bottom: 30px;
 }
 
-header {
+shared-header {
     background-color: #333536; /*this color must be the same as the nav*/ 
 }
 
-header > nav {
+shared-header > nav {
     background-color: #333536;
     display: flex;
     height: 55px;
 }
 
-header > nav img {
+shared-header > nav img {
     height: 40px;
     width: auto;
     padding: 7.5px;
 }
 
-header > nav > div:nth-child(2) > button {
+shared-header > nav > div:nth-child(2) > button {
     background-color: #333536;
     border: 0;
 }
 
-header > nav > div:nth-child(2) {
+shared-header > nav > div:nth-child(2) {
     width: 55px;
     padding-right: 10px;
 }
 
-header > nav > div:nth-child(1) {
+shared-header > nav > div:nth-child(1) {
     flex-grow: 10;
     padding-left: 65px;
 }
 
-header > nav > div:nth-child(1) > ul  {
+shared-header > nav > div:nth-child(1) > ul  {
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -113,7 +113,7 @@ header > nav > div:nth-child(1) > ul  {
     gap: 20px;
 }
 
-header > nav > div:nth-child(1) > ul > li > button {
+shared-header > nav > div:nth-child(1) > ul > li > button {
     color: black;
     background-color: #333536;
     border-style: none;

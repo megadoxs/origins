@@ -1,13 +1,22 @@
 //sticky nav
 window.onscroll = function() {Stickynav()};
 
-var sticky = navbar.offsetTop;  
+const sticky = navbar.offsetTop; 
 
 function Stickynav() {
   if (window.scrollY >= sticky) {
     navbar.classList.add("sticky")
-  } else {
+  } 
+  else {
     navbar.classList.remove("sticky");
+  }
+}
+
+function onLoadScrollToTarget(){
+  if (localStorage.getItem('scroll') !== null) {
+    let target = localStorage.getItem('scroll'); 
+    scrollToTarget(target);
+    localStorage.removeItem('scroll')
   }
 }
 
@@ -15,23 +24,43 @@ function augmentedScrollToTarget(targetId) {
   localStorage.setItem('scroll', targetId)
 }
 
-function onLoadScrollToTarget(){
-  if (localStorage.getItem('scroll') !== null) {
-    var target = localStorage.getItem('scroll'); 
-    scrollToTarget(target);
-    localStorage.removeItem('scroll')
-  }
-}
-
 async function scrollToTarget(targetId) {
-  var targetDiv = document.getElementById(targetId);
-  var navbarHeight = navbar.offsetHeight;
-  var targetScrollPosition = targetDiv.offsetTop - navbarHeight;
+  let targetDiv = document.getElementById(targetId);
+  let navbarHeight = navbar.offsetHeight;
+  let targetScrollPosition = targetDiv.offsetTop - navbarHeight;
 
     window.scrollTo({
     top: targetScrollPosition,
     behavior: 'smooth'
   });
+}
+
+async function navButtonsManager(target){
+  let targets = target.split(", ");
+  if (targets[1]){
+    if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html')){
+      let targetDiv = document.getElementById(targets[1]);
+      let navbarHeight = navbar.offsetHeight;
+      let targetScrollPosition = targetDiv.offsetTop - navbarHeight;
+    
+        window.scrollTo({
+        top: targetScrollPosition,
+        behavior: 'smooth'
+      });
+    }
+    else{
+      localStorage.setItem('scroll', targets[1]);
+      window.location.href = `./${targets[0]}`;
+    }
+  }
+  else {
+    if (!window.location.toString().includes("lang")){
+      window.location.href = `./public/lang/English/${targets[0]}`;
+    }
+    else {
+      window.location.href = `./${targets[0]}`;
+    }
+  }
 }
 
 // drop downs
