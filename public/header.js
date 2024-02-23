@@ -76,8 +76,17 @@ class sharedHeader extends HTMLElement {
                         </div>
                         <div class = custom_select>
                             <p>Enable nerd mode</p>
-                            <input type="checkbox" id = "nerd_mode" class = "margl5" name="nerd" onClick="nerd_set()">
+                            <input type="checkbox" id = "nerd_mode" class = "margl5" onClick="nerd_set(page)">
                         </div>
+                            <div class = custom_select>
+                            <p>Code display instant</p>
+                            <input type="checkbox" id = "code_instant" class = "margl5" onClick="codeInstant()">
+                        </div>
+                        <div class = custom_select>
+                            <p>Code display speed:</p>
+                            <input type="number" id = "code_speed" onChange="codeSpeed(this.value, this.min, this.max);" class = "margl5 numb_input" min= "100" max = "500">
+                            <p>pixel/s</p>
+                        <div>
                         </div>
                     </div>
                 </div>

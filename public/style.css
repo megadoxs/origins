@@ -839,3 +839,7 @@ footer {
     display: flex;
     gap: 40px;
 }
+
+.numb_input {
+    direction: rtl;
+}

@@ -457,7 +457,7 @@ function mode_selector(input){
 
 // show code
 
-const transition_speed = 200;
+const code_transition_speed = 200; // default value
 
 const codeDivArray = [
   [blood_born, blood_sucker, vampiric_attributes, immortal, wind_cloack], 
@@ -475,7 +475,6 @@ async function onLoad_nerd_show(page){
 
     if(nerd === "true"){
       codeDiv.style.height = codeDiv.scrollHeight + "px";
-      codeDiv.style.marginBottom = "20px";
       codeDivShow.style.display = "none";
       codeDivHide.style.display = "block";
     } 
@@ -494,7 +493,9 @@ function nerd_show_all(page){
     codeDivShow = document.getElementById(codeDivArray[page][i].id + "_show");
     codeDivHide = document.getElementById(codeDivArray[page][i].id + "_hide");
     codeDiv = document.getElementById(codeDivArray[page][i].id + "_code");
-    codeDiv.style.transition = "height " + codeDiv.scrollHeight/transition_speed + "s linear"
+    if (!code_instant.checked)
+      codeDiv.style.transition = "height " + codeDiv.scrollHeight/(localStorage.getItem('codeSpeed') || code_transition_speed) + "s linear"
+    else codeDiv.style.transition = "none";
 
     if(nerd === "true"){
       codeDiv.style.height = codeDiv.scrollHeight + "px";
@@ -505,14 +506,17 @@ function nerd_show_all(page){
     else if (codeDiv.style.height > "0px"){
       codeDiv.style.height = "0px"
       codeDiv.style.marginBottom = "0px";
-      codeDivShow.style.marginTop = "20px";
+      if (!code_instant.checked)
+        codeDivShow.style.marginTop = "20px";
       codeDivShow.style.display = "block";
       codeDivHide.style.display = "none";
-      codeDiv.addEventListener("transitionend", function (currentCodeDivShow) {
-        return function () {
-          currentCodeDivShow.style.marginTop = "";
-        };
-      }(codeDivShow));
+      if (!code_instant.checked){
+        codeDiv.addEventListener("transitionend", function (currentCodeDivShow) {
+          return function () {
+            currentCodeDivShow.style.marginTop = "";
+          };
+        }(codeDivShow));
+      }
     }
   }
 }
@@ -521,8 +525,10 @@ function nerd_show(page, code_box, of) { // code_box = number starting at 0 of t
   codeDivShow = document.getElementById(codeDivArray[page][code_box].id + "_show");
   codeDivHide = document.getElementById(codeDivArray[page][code_box].id + "_hide");
   codeDiv = document.getElementById(codeDivArray[page][code_box].id + "_code");
-  codeDiv.style.transition = "height " + codeDiv.scrollHeight/transition_speed + "s linear"
-  
+  if (!code_instant.checked)
+    codeDiv.style.transition = "height " + codeDiv.scrollHeight/(localStorage.getItem('codeSpeed') || code_transition_speed) + "s linear"
+  else codeDiv.style.transition = "none";
+
   if (of == 1){
     codeDiv.style.height = codeDiv.scrollHeight + "px";
     codeDiv.style.marginBottom = "20px";
@@ -532,14 +538,17 @@ function nerd_show(page, code_box, of) { // code_box = number starting at 0 of t
   else {
     codeDiv.style.height = "0px"
     codeDiv.style.marginBottom = "0px";
-    codeDivShow.style.marginTop = "20px";
+    if (!code_instant.checked)
+      codeDivShow.style.marginTop = "20px";
     codeDivShow.style.display = "block";
     codeDivHide.style.display = "none";
-    codeDiv.addEventListener("transitionend", function (currentCodeDivShow) {
-      return function () {
-        currentCodeDivShow.style.marginTop = "";
-      };
-    }(codeDivShow));
+    if (!code_instant.checked){
+      codeDiv.addEventListener("transitionend", function (currentCodeDivShow) {
+        return function () {
+          currentCodeDivShow.style.marginTop = "";
+        };
+      }(codeDivShow));
+    }
   }
 }
 
@@ -561,3 +570,44 @@ async function fetch_json_files(){
 }
 
 fetch_json_files()
+
+// onLoad setting config
+
+var page;
+
+function onLoad_settings(page){
+  lang_selector(lang);
+  mode_selector(mode);
+  onLoad_nerd_set();
+  onLoad_codeSpeed()
+  this.page = page;
+}
+
+// code Speed
+
+function codeSpeed(value, min, max){
+  if (code_speed.value == ""){
+    code_speed.value = localStorage.getItem('codeSpeed') || code_transition_speed;
+  }
+  else if(value < min){
+    code_speed.value = min;
+  } 
+  else if(value > max){
+    code_speed.value = max; 
+  }
+  else {
+    code_speed.value = value;
+  }
+  localStorage.setItem('codeSpeed',  code_speed.value);
+}
+
+function onLoad_codeSpeed(){
+  code_speed.value = localStorage.getItem('codeSpeed') || code_transition_speed;
+  code_instant.checked = (localStorage.getItem('codeInstant') == "true") || false;
+  code_speed.disabled = (localStorage.getItem('codeInstant') == "true") || false;
+}
+
+function codeInstant(){
+  code_speed.disabled = !code_speed.disabled; //disables speed control of code display
+  localStorage.setItem('codeInstant',  code_speed.disabled);
+}
